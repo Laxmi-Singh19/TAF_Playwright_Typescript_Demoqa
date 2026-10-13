@@ -1,0 +1,26 @@
+{
+  "name": "taf-demoqa",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript framework for DemoQA (POM, fixtures, JSON test data)",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:smoke": "playwright test --project=chromium --grep @smoke",
+    "test:sanity": "playwright test --project=chromium --grep @sanity",
+    "test:regression": "playwright test --project=chromium --grep @regression",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^22.0.0",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.0"
+  },
+  "dependencies": {
+    "playwright": "^1.64.0"
+  }
+}

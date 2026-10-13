@@ -1,0 +1,21 @@
+{
+  "TC01": {
+    "firstName": "Priya", "lastName": "Sharma", "email": "priya@example.com",
+    "gender": "Female", "mobile": "9876543210", "subject": "Maths",
+    "hobby": "Sports", "address": "Delhi", "state": "NCR", "city": "Delhi"
+  },
+  "TC02": {
+    "firstName": "Priya", "lastName": "Sharma", "gender": "Female", "mobile": "9876543210"
+  },
+  "TC03": {
+    "firstName": "Anita", "lastName": "Verma", "email": "anita@example.com",
+    "age": "28", "salary": "50000", "department": "QA", "newAge": "30"
+  },
+  "TC04": {
+    "fullName": "Priya Sharma", "email": "priya@example.com",
+    "currentAddress": "Delhi", "permanentAddress": "Noida", "option": "Yes"
+  },
+  "TC05": {
+    "searchText": "Git", "title": "Git Pocket Guide", "author": "Richard E. Silverman"
+  }
+}
