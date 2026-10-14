@@ -5,7 +5,7 @@ export class AlertsPage extends BasePage {
   readonly alertButton = this.page.locator('#alertButton');
   readonly timerAlertButton = this.page.locator('#timerAlertButton');
   readonly confirmButton = this.page.locator('#confirmButton');
-  readonly promptButton = this.page.locator('#promtButton');   // DemoQA spells it "promt"
+  readonly promptButton = this.page.locator('#promtButton');   
   readonly confirmResult = this.page.locator('#confirmResult');
   readonly promptResult = this.page.locator('#promptResult');
 
@@ -13,7 +13,6 @@ export class AlertsPage extends BasePage {
     await this.open('/alerts');
   }
 
-  // Accept the dialog (OK) when it appears, and return its message
   async clickAndAccept(button: Locator, promptText?: string): Promise<string> {
     const messagePromise = new Promise<string>((resolve) => {
       this.page.once('dialog', async (dialog) => {       // 1. listener is ready before the click
@@ -22,11 +21,10 @@ export class AlertsPage extends BasePage {
         resolve(message);
       });
     });
-    await button.click();                                 // 3. now the click can finish
-    return messagePromise;                                // 4. also waits for the timer alert
+    await button.click();                           
+    return messagePromise;                          
   }
 
-  // Dismiss the dialog (Cancel) when it appears, and return its message
   async clickAndDismiss(button: Locator): Promise<string> {
     const messagePromise = new Promise<string>((resolve) => {
       this.page.once('dialog', async (dialog) => {
