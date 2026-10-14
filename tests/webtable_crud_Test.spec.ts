@@ -8,14 +8,14 @@ test('TC03 - Web Table add, edit, search and delete', { tag: '@smoke' }, async (
   // Create
   await webTablesPage.addRecord(data);
   await webTablesPage.search(data.email);
-  await expect(webTablesPage.tableBody).toContainText(data.firstName);
-  await expect(webTablesPage.tableBody).toContainText(data.age);
+  await expect(webTablesPage.table).toContainText(data.firstName);
+  await expect(webTablesPage.table).toContainText(data.age);
 
   // Update
   await webTablesPage.editAge(data.newAge);
-  await expect(webTablesPage.tableBody).toContainText(data.newAge);
+  await expect(webTablesPage.table).toContainText(data.newAge);
 
   // Delete
   await webTablesPage.deleteFirstRow();
-  await expect(webTablesPage.tableBody).toContainText('No rows found');
+  await expect(webTablesPage.table).not.toContainText(data.email);
 });

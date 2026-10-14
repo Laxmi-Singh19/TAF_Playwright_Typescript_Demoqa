@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class PracticeFormPage extends BasePage {
@@ -11,7 +12,6 @@ export class PracticeFormPage extends BasePage {
   readonly city = this.page.locator('#city');
   readonly submitButton = this.page.locator('#submit');
   readonly modal = this.page.locator('.modal-content');
-  readonly closeButton = this.page.locator('#closeLargeModal');
 
   async openPage() {
     await this.open('/automation-practice-form');
@@ -43,10 +43,17 @@ export class PracticeFormPage extends BasePage {
   }
 
   async submit() {
-    await this.submitButton.click({ force: true });
+    await this.submitButton.click({ force: true });   // force: ads can cover the button
   }
 
+  // Close the popup with the Close button, and use the Escape key if the click did not close it
   async closeModal() {
-    await this.closeButton.click({ force: true });
+    await this.page.getByRole('button', { name: 'Close' }).click();
+
+    try {
+      await expect(this.modal).toBeHidden();   // wait time comes from the expect timeout in the config
+    } catch {
+      await this.page.keyboard.press('Escape');
+    }
   }
 }

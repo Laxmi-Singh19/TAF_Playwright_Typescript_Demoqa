@@ -13,7 +13,7 @@ export class WebTablesPage extends BasePage {
 
   // Table
   readonly searchBox = this.page.locator('#searchBox');
-  readonly tableBody = this.page.locator('.rt-tbody');
+  readonly table = this.page.getByRole('table');
   readonly editIcon = this.page.locator('span[title="Edit"]').first();
   readonly deleteIcon = this.page.locator('span[title="Delete"]').first();
 

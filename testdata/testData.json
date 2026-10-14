@@ -1,21 +1,63 @@
 {
   "TC01": {
-    "firstName": "Priya", "lastName": "Sharma", "email": "priya@example.com",
+    "firstName": "Laxmi", "lastName": "Singh", "email": "lax@example.com",
     "gender": "Female", "mobile": "9876543210", "subject": "Maths",
     "hobby": "Sports", "address": "Delhi", "state": "NCR", "city": "Delhi"
   },
   "TC02": {
-    "firstName": "Priya", "lastName": "Sharma", "gender": "Female", "mobile": "9876543210"
+    "firstName": "Laxmi", "lastName": "Singh", "gender": "Female", "mobile": "9876543210"
   },
   "TC03": {
     "firstName": "Anita", "lastName": "Verma", "email": "anita@example.com",
     "age": "28", "salary": "50000", "department": "QA", "newAge": "30"
   },
   "TC04": {
-    "fullName": "Priya Sharma", "email": "priya@example.com",
-    "currentAddress": "Delhi", "permanentAddress": "Noida", "option": "Yes"
+    "promptName": "Laxmi"
   },
   "TC05": {
-    "searchText": "Git", "title": "Git Pocket Guide", "author": "Richard E. Silverman"
-  }
+    "frameText": "This is a sample page",
+    "parentText": "Parent frame",
+    "childText": "Child Iframe"
+  },
+  "TC06": {
+    "uploadFileName": "sample_upload.txt",
+    "uploadContent": "Hello from Playwright",
+    "downloadFileName": "sampleFile.jpeg"
+  },
+  "TC07": {
+    "userNamePrefix": "Laxmi_qa",
+    "password": "Test@12345",
+    "bookTitle": "Git Pocket Guide",
+    "bookAuthor": "Richard E. Silverman"
+  },
+  "TC08": {
+    "userNamePrefix": "laxmi_api",
+    "password": "Test@12345",
+    "isbn": "9781449325862",
+    "bookTitle": "Git Pocket Guide"
+  },
+  "TC09": {
+    "date": "10/15/2026",
+    "colorSearch": "Re",
+    "colorOption": "Red"
+  },
+  "TC10": [
+      
+    {
+      "caseName": "Valid data",
+      "fullName": "Laxmi Singh", "email": "lax@example.com",
+      "currentAddress": "Delhi", "permanentAddress": "Noida", "isValid": true
+    },
+    {
+      "caseName": "Invalid email",
+      "fullName": "Laxmi Singh", "email": "laxmi-invalid-email",
+      "currentAddress": "Delhi", "permanentAddress": "Noida", "isValid": false
+    },
+    {
+      "caseName": "Special characters in the name",
+      "fullName": "Laxmi O'Neil-Singh", "email": "laxmi.oneil@example.com",
+      "currentAddress": "Delhi", "permanentAddress": "Noida", "isValid": true
+    }
+  ]
+  
 }
