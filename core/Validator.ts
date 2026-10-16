@@ -11,6 +11,18 @@ export class Validator {
     });
   }
 
+  async verifyHasText(selector: string, expected: string) {
+    await step(`Verify ${selector} has text "${expected}"`, async () => {
+      await expect(this.page.locator(selector)).toHaveText(expected);
+    });
+  }
+
+  async verifyHasValue(selector: string, expected: string) {
+    await step(`Verify ${selector} has value "${expected}"`, async () => {
+      await expect(this.page.locator(selector)).toHaveValue(expected);
+    });
+  }
+
   async verifyNotContainsText(selector: string, unexpected: string) {
     await step(`Verify ${selector} does not contain "${unexpected}"`, async () => {
       await expect(this.page.locator(selector)).not.toContainText(unexpected);
@@ -45,6 +57,13 @@ export class Validator {
   async verifyEquals(actual: string, expected: string, what: string) {
     await step(`Verify ${what} is "${expected}"`, async () => {
       expect(actual).toBe(expected);
+    });
+  }
+
+  // A number must be bigger than a minimum, for example the size of a downloaded file
+  async verifyGreaterThan(actual: number, minimum: number, what: string) {
+    await step(`Verify ${what} (${actual}) is greater than ${minimum}`, async () => {
+      expect(actual).toBeGreaterThan(minimum);
     });
   }
 

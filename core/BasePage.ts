@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import * as fs from 'fs';
 import { step } from './Reporter';
 
 // Base page: all UI actions are defined here. Pages never call Playwright directly.
@@ -104,6 +105,49 @@ export class BasePage {
       const text = (await tab.locator(textSelector).innerText()).trim();
       await tab.close();
       return text;
+    });
+  }
+
+  // Upload a file that is created in memory, so no file is needed on disk
+  async uploadFile(selector: string, fileName: string, content: string) {
+    await step(`Upload file "${fileName}" to ${selector}`, async () => {
+      await this.el(selector).setInputFiles({
+        name: fileName,
+        mimeType: 'text/plain',
+        buffer: Buffer.from(content),
+      });
+    });
+  }
+
+  // Click a download button and return the name and the size (in bytes) of the downloaded file
+  async clickAndDownload(selector: string): Promise<{ name: string; size: number }> {
+    return step(`Click ${selector} and download the file`, async () => {
+      const downloadPromise = this.page.waitForEvent('download');   // listen first, then click
+      await this.el(selector).click();
+      const download = await downloadPromise;
+      const filePath = await download.path();
+      return { name: download.suggestedFilename(), size: fs.statSync(filePath).size };
+    });
+  }
+
+  // Drag one element onto another one with real mouse movements
+  async dragAndDrop(sourceSelector: string, targetSelector: string) {
+    await step(`Drag ${sourceSelector} to ${targetSelector}`, async () => {
+      await this.el(targetSelector).waitFor();   // the page's drag and drop script must be ready
+      await this.el(sourceSelector).scrollIntoViewIfNeeded();
+
+      const from = await this.el(sourceSelector).boundingBox();
+      const to = await this.el(targetSelector).boundingBox();
+      if (!from || !to) throw new Error('Drag or drop element is not visible');
+
+      const startX = from.x + from.width / 2;
+      const startY = from.y + from.height / 2;
+
+      await this.page.mouse.move(startX, startY);
+      await this.page.mouse.down();
+      await this.page.mouse.move(startX + 10, startY + 10, { steps: 5 });
+      await this.page.mouse.move(to.x + to.width / 2, to.y + to.height / 2, { steps: 20 });
+      await this.page.mouse.up();
     });
   }
 }

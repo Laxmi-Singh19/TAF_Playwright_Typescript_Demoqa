@@ -7,11 +7,16 @@ import { TextBoxPage } from '../pages/TextBoxPage';
 import { AlertsPage } from '../pages/AlertsPage';
 import { FramesPage } from '../pages/FramesPage';
 import { BrowserWindowsPage } from '../pages/BrowserWindowsPage';
+import { UploadDownloadPage } from '../pages/UploadDownloadPage';
+import { WidgetsPage } from '../pages/WidgetsPage';
+import { InteractionsPage } from '../pages/InteractionsPage';
 import { PracticeFormFlow } from '../business/PracticeFormFlow';
 import { WebTableFlow } from '../business/WebTableFlow';
 import { TextBoxFlow } from '../business/TextBoxFlow';
 import { AlertsFlow } from '../business/AlertsFlow';
 import { FramesWindowsFlow } from '../business/FramesWindowsFlow';
+import { UploadDownloadFlow } from '../business/UploadDownloadFlow';
+import { WidgetsInteractionsFlow } from '../business/WidgetsInteractionsFlow';
 
 // The test function and the business flows that tests can use.
 // Tests import `test` from here, so they never import Playwright.
@@ -21,6 +26,8 @@ type Fixtures = {
   textBoxFlow: TextBoxFlow;
   alertsFlow: AlertsFlow;
   framesWindowsFlow: FramesWindowsFlow;
+  uploadDownloadFlow: UploadDownloadFlow;
+  widgetsInteractionsFlow: WidgetsInteractionsFlow;
   logContext: void;
 };
 
@@ -51,5 +58,13 @@ export const test = base.extend<Fixtures>({
 
   framesWindowsFlow: async ({ page }, use) => {
     await use(new FramesWindowsFlow(new FramesPage(page), new BrowserWindowsPage(page), new Validator(page)));
+  },
+
+  uploadDownloadFlow: async ({ page }, use) => {
+    await use(new UploadDownloadFlow(new UploadDownloadPage(page), new Validator(page)));
+  },
+
+  widgetsInteractionsFlow: async ({ page }, use) => {
+    await use(new WidgetsInteractionsFlow(new WidgetsPage(page), new InteractionsPage(page), new Validator(page)));
   },
 });

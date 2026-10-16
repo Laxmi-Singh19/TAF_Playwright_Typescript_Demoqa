@@ -1,5 +1,4 @@
 import { BasePage } from '../core/BasePage';
-
 export class WebTablesPage extends BasePage {
   readonly selectors = {
     addButton: '#addNewRecordButton',

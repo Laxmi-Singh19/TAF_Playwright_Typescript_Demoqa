@@ -1,20 +1,9 @@
-import * as fs from 'fs';
-import { test, expect } from '../fixtures/baseTest';
+import { test } from '../core/test';
 import { getTestData } from '../utils/dataReader';
 
-test('TC06 - Upload a file, then download a file and verify it', { tag: '@sanity' }, async ({ uploadDownloadPage }, testInfo) => {
+test('TC06 - Upload a file, then download a file and verify it', { tag: '@sanity' }, async ({ uploadDownloadFlow }) => {
   const data = getTestData('TC06');
-  await uploadDownloadPage.openPage();
 
-  // Upload: verify that the page shows the file name
-  await uploadDownloadPage.uploadFile(data.uploadFileName, data.uploadContent);
-  await expect(uploadDownloadPage.uploadedPath).toContainText(data.uploadFileName);
-
-  // Download: verify the file name, save it, and check that it is not empty
-  const download = await uploadDownloadPage.downloadFile();
-  expect(download.suggestedFilename()).toBe(data.downloadFileName);
-
-  const savedPath = testInfo.outputPath(download.suggestedFilename());
-  await download.saveAs(savedPath);
-  expect(fs.statSync(savedPath).size).toBeGreaterThan(0);
+  await uploadDownloadFlow.uploadAndVerify(data);
+  await uploadDownloadFlow.downloadAndVerify(data);
 });
