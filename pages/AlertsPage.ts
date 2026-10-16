@@ -1,39 +1,36 @@
-import { Locator } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from '../core/BasePage';
 
 export class AlertsPage extends BasePage {
-  readonly alertButton = this.page.locator('#alertButton');
-  readonly timerAlertButton = this.page.locator('#timerAlertButton');
-  readonly confirmButton = this.page.locator('#confirmButton');
-  readonly promptButton = this.page.locator('#promtButton');   
-  readonly confirmResult = this.page.locator('#confirmResult');
-  readonly promptResult = this.page.locator('#promptResult');
+  readonly selectors = {
+    alertButton: '#alertButton',
+    timerAlertButton: '#timerAlertButton',
+    confirmButton: '#confirmButton',
+    promptButton: '#promtButton',   // DemoQA spells it "promt"
+    confirmResult: '#confirmResult',
+    promptResult: '#promptResult',
+  };
 
   async openPage() {
     await this.open('/alerts');
   }
 
-  async clickAndAccept(button: Locator, promptText?: string): Promise<string> {
-    const messagePromise = new Promise<string>((resolve) => {
-      this.page.once('dialog', async (dialog) => {       // 1. listener is ready before the click
-        const message = dialog.message();
-        await dialog.accept(promptText);                  // 2. handled the moment it appears
-        resolve(message);
-      });
-    });
-    await button.click();                           
-    return messagePromise;                          
+  async acceptSimpleAlert(): Promise<string> {
+    return this.acceptDialogOnClick(this.selectors.alertButton);
   }
 
-  async clickAndDismiss(button: Locator): Promise<string> {
-    const messagePromise = new Promise<string>((resolve) => {
-      this.page.once('dialog', async (dialog) => {
-        const message = dialog.message();
-        await dialog.dismiss();
-        resolve(message);
-      });
-    });
-    await button.click();
-    return messagePromise;
+  async acceptTimerAlert(): Promise<string> {
+    return this.acceptDialogOnClick(this.selectors.timerAlertButton);
+  }
+
+  async acceptConfirmAlert(): Promise<string> {
+    return this.acceptDialogOnClick(this.selectors.confirmButton);
+  }
+
+  async dismissConfirmAlert(): Promise<string> {
+    return this.dismissDialogOnClick(this.selectors.confirmButton);
+  }
+
+  async acceptPromptAlert(name: string): Promise<string> {
+    return this.acceptDialogOnClick(this.selectors.promptButton, name);
   }
 }

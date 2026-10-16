@@ -1,0 +1,615 @@
+2026-10-15T14:50:45.238Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-15T14:50:45.247Z [INFO] [W1] [TC01 - Complete Practice Form registration] TEST START
+2026-10-15T14:50:46.702Z [INFO] [W1] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-15T14:50:46.702Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-15T14:50:46.724Z [ERROR] [W1] [TC01 - Complete Practice Form registration] FAILED: Type "Laxmi" in #firstName | this.page.locator is not a function
+2026-10-15T14:50:46.732Z [ERROR] [W0] [TC02 - Practice Form validation, then successful submit] FAILED: Click #submit (forced) | this.page.locator is not a function
+2026-10-15T14:50:47.089Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] TEST END | status: failed
+2026-10-15T14:50:47.090Z [INFO] [W1] [TC01 - Complete Practice Form registration] TEST END | status: failed
+2026-10-15T14:53:58.851Z [INFO] [W1] [TC01 - Complete Practice Form registration] TEST START
+2026-10-15T14:53:58.857Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-15T14:53:59.469Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-15T14:53:59.480Z [INFO] [W1] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-15T14:53:59.529Z [ERROR] [W0] [TC02 - Practice Form validation, then successful submit] FAILED: Click #submit (forced) | this.page.locator is not a function
+2026-10-15T14:53:59.534Z [ERROR] [W1] [TC01 - Complete Practice Form registration] FAILED: Type "Laxmi" in #firstName | this.page.locator is not a function
+2026-10-15T14:53:59.848Z [INFO] [W0] [TC02 - Practice Form validation, then successful submit] TEST END | status: failed
+2026-10-15T14:53:59.887Z [INFO] [W1] [TC01 - Complete Practice Form registration] TEST END | status: failed
+2026-10-15T15:14:55.263Z [INFO] [W1] Open page /automation-practice-form
+2026-10-15T15:14:55.268Z [INFO] [W0] Open page /automation-practice-form
+2026-10-15T15:15:03.685Z [INFO] [W1] Type "Laxmi" in #firstName
+2026-10-15T15:15:04.024Z [INFO] [W1] Type "Singh" in #lastName
+2026-10-15T15:15:04.788Z [INFO] [W1] Type "lax@example.com" in #userEmail
+2026-10-15T15:15:04.892Z [INFO] [W1] Click text="Female"
+2026-10-15T15:15:05.294Z [INFO] [W1] Type "9876543210" in #userNumber
+2026-10-15T15:15:05.630Z [INFO] [W1] Type "Maths" in #subjectsInput
+2026-10-15T15:15:05.778Z [INFO] [W1] Press Enter on #subjectsInput
+2026-10-15T15:15:05.922Z [INFO] [W1] Click text="Sports"
+2026-10-15T15:15:06.060Z [INFO] [W0] Click #submit (forced)
+2026-10-15T15:15:06.158Z [INFO] [W1] Type "Delhi" in #currentAddress
+2026-10-15T15:15:06.299Z [INFO] [W1] Click #state
+2026-10-15T15:15:06.513Z [INFO] [W1] Click text="NCR"
+2026-10-15T15:15:06.719Z [INFO] [W1] Click #city
+2026-10-15T15:15:06.916Z [INFO] [W1] Click text="Delhi"
+2026-10-15T15:15:07.103Z [INFO] [W1] Click #submit (forced)
+2026-10-15T15:15:07.774Z [INFO] [W1] Click #closeLargeModal
+2026-10-15T15:15:07.797Z [INFO] [W0] Type "Laxmi" in #firstName
+2026-10-15T15:15:08.049Z [INFO] [W1] Wait until .modal-content is hidden
+2026-10-15T15:15:08.054Z [INFO] [W0] Type "Singh" in #lastName
+2026-10-15T15:15:08.451Z [INFO] [W0] Click text="Female"
+2026-10-15T15:15:08.710Z [INFO] [W0] Type "9876543210" in #userNumber
+2026-10-15T15:15:08.800Z [INFO] [W0] Click #submit (forced)
+2026-10-15T15:15:23.162Z [INFO] [W1] Press key Escape
+2026-10-15T15:15:23.229Z [INFO] [W1] Wait until .modal-content is hidden
+2026-10-16T06:25:43.027Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST START
+2026-10-16T06:25:43.597Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Open page /alerts
+2026-10-16T06:25:48.521Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #alertButton and accept the dialog
+2026-10-16T06:25:48.652Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify simple alert message is "You clicked a button"
+2026-10-16T06:25:48.665Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #timerAlertButton and accept the dialog
+2026-10-16T06:25:53.810Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify timer alert message is "This alert appeared after 5 seconds"
+2026-10-16T06:25:53.817Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and accept the dialog
+2026-10-16T06:25:53.961Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify confirm alert message is "Do you confirm action?"
+2026-10-16T06:25:53.968Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Ok"
+2026-10-16T06:25:54.024Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and dismiss the dialog
+2026-10-16T06:25:54.192Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Cancel"
+2026-10-16T06:25:54.237Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #promtButton and accept the dialog
+2026-10-16T06:25:54.364Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify prompt alert message is "Please enter your name"
+2026-10-16T06:25:54.377Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #promptResult contains "You entered Laxmi"
+2026-10-16T06:25:54.704Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST END | status: passed
+2026-10-16T06:26:01.540Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST START
+2026-10-16T06:26:01.640Z [INFO] [W1] [TC10 - Text Box: Valid data] Open page /text-box
+2026-10-16T06:26:03.652Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Laxmi Singh" in #userName
+2026-10-16T06:26:03.749Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "lax@example.com" in #userEmail
+2026-10-16T06:26:04.074Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Delhi" in #currentAddress
+2026-10-16T06:26:04.499Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Noida" in #permanentAddress
+2026-10-16T06:26:04.651Z [INFO] [W1] [TC10 - Text Box: Valid data] Click #submit
+2026-10-16T06:26:05.215Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #name contains "Laxmi Singh"
+2026-10-16T06:26:05.584Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #email contains "lax@example.com"
+2026-10-16T06:26:06.395Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST END | status: passed
+2026-10-16T06:26:06.443Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST START
+2026-10-16T06:26:06.682Z [INFO] [W1] [TC10 - Text Box: Invalid email] Open page /text-box
+2026-10-16T06:26:08.613Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Laxmi Singh" in #userName
+2026-10-16T06:26:08.674Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "laxmi-invalid-email" in #userEmail
+2026-10-16T06:26:08.756Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Delhi" in #currentAddress
+2026-10-16T06:26:08.805Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Noida" in #permanentAddress
+2026-10-16T06:26:08.884Z [INFO] [W1] [TC10 - Text Box: Invalid email] Click #submit
+2026-10-16T06:26:09.375Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #userEmail has class "field-error"
+2026-10-16T06:26:09.432Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #output #name appears 0 time(s)
+2026-10-16T06:26:10.093Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST END | status: passed
+2026-10-16T06:26:10.122Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST START
+2026-10-16T06:26:10.213Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Open page /text-box
+2026-10-16T06:26:11.282Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST START
+2026-10-16T06:26:11.366Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /frames
+2026-10-16T06:26:11.994Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Laxmi O'Neil-Singh" in #userName
+2026-10-16T06:26:12.045Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "laxmi.oneil@example.com" in #userEmail
+2026-10-16T06:26:12.079Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Delhi" in #currentAddress
+2026-10-16T06:26:12.162Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Noida" in #permanentAddress
+2026-10-16T06:26:12.213Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Click #submit
+2026-10-16T06:26:12.528Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #name contains "Laxmi O'Neil-Singh"
+2026-10-16T06:26:12.559Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #email contains "laxmi.oneil@example.com"
+2026-10-16T06:26:13.084Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST END | status: passed
+2026-10-16T06:26:13.151Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T06:26:13.244Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame1 has text "This is a sample page"
+2026-10-16T06:26:13.255Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:26:13.270Z [ERROR] [W1] [TC02 - Practice Form validation, then successful submit] FAILED: Click #submit (forced) | this.page.locator is not a function
+2026-10-16T06:26:13.413Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame2 has text "This is a sample page"
+2026-10-16T06:26:13.415Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST END | status: failed
+2026-10-16T06:26:13.828Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /nestedframes
+2026-10-16T06:26:14.512Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in frame #frame1 contains "Parent frame"
+2026-10-16T06:26:14.628Z [INFO] [W2] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T06:26:14.753Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in nested frame #frame1 > iframe contains "Child Iframe"
+2026-10-16T06:26:14.955Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /browser-windows
+2026-10-16T06:26:15.003Z [INFO] [W2] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:26:15.020Z [ERROR] [W2] [TC02 - Practice Form validation, then successful submit] FAILED: Click #submit (forced) | this.page.locator is not a function
+2026-10-16T06:26:15.167Z [INFO] [W2] [TC02 - Practice Form validation, then successful submit] TEST END | status: failed
+2026-10-16T06:26:15.550Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Click #tabButton and read #sampleHeading from the new tab
+2026-10-16T06:26:15.987Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify new tab heading is "This is a sample page"
+2026-10-16T06:26:15.996Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #tabButton is visible
+2026-10-16T06:26:16.191Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST END | status: passed
+2026-10-16T06:26:16.283Z [INFO] [W3] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T06:26:16.628Z [INFO] [W3] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T06:26:16.639Z [ERROR] [W3] [TC01 - Complete Practice Form registration] FAILED: Type "Laxmi" in #firstName | this.page.locator is not a function
+2026-10-16T06:26:16.764Z [INFO] [W3] [TC01 - Complete Practice Form registration] TEST END | status: failed
+2026-10-16T06:26:17.570Z [INFO] [W4] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T06:26:17.846Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T06:26:17.856Z [ERROR] [W4] [TC01 - Complete Practice Form registration] FAILED: Type "Laxmi" in #firstName | this.page.locator is not a function
+2026-10-16T06:26:18.010Z [INFO] [W4] [TC01 - Complete Practice Form registration] TEST END | status: failed
+2026-10-16T06:26:19.197Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] TEST START
+2026-10-16T06:26:19.441Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Open page /webtables
+2026-10-16T06:26:21.481Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #addNewRecordButton
+2026-10-16T06:26:22.066Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "Anita" in #firstName
+2026-10-16T06:26:22.272Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "Verma" in #lastName
+2026-10-16T06:26:22.733Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #userEmail
+2026-10-16T06:26:23.183Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "28" in #age
+2026-10-16T06:26:23.658Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "50000" in #salary
+2026-10-16T06:26:24.070Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "QA" in #department
+2026-10-16T06:26:24.206Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:26:24.355Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #searchBox
+2026-10-16T06:26:24.540Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "Anita"
+2026-10-16T06:26:24.629Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "28"
+2026-10-16T06:26:24.680Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click span[title="Edit"] >> nth=0
+2026-10-16T06:26:24.791Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "30" in #age
+2026-10-16T06:26:24.902Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:26:25.190Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "30"
+2026-10-16T06:26:25.256Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click span[title="Delete"] >> nth=0
+2026-10-16T06:26:25.455Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table does not contain "anita@example.com"
+2026-10-16T06:26:27.528Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] TEST END | status: passed
+2026-10-16T06:35:17.283Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST START
+2026-10-16T06:35:18.096Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Open page /alerts
+2026-10-16T06:35:20.394Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #alertButton and accept the dialog
+2026-10-16T06:35:20.676Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify simple alert message is "You clicked a button"
+2026-10-16T06:35:20.705Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #timerAlertButton and accept the dialog
+2026-10-16T06:35:26.941Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify timer alert message is "This alert appeared after 5 seconds"
+2026-10-16T06:35:26.953Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and accept the dialog
+2026-10-16T06:35:27.145Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify confirm alert message is "Do you confirm action?"
+2026-10-16T06:35:27.163Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Ok"
+2026-10-16T06:35:27.317Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and dismiss the dialog
+2026-10-16T06:35:27.554Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Cancel"
+2026-10-16T06:35:27.629Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #promtButton and accept the dialog
+2026-10-16T06:35:27.842Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify prompt alert message is "Please enter your name"
+2026-10-16T06:35:27.852Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #promptResult contains "You entered Laxmi"
+2026-10-16T06:35:28.468Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST END | status: passed
+2026-10-16T06:35:40.476Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST START
+2026-10-16T06:35:40.731Z [INFO] [W1] [TC10 - Text Box: Valid data] Open page /text-box
+2026-10-16T06:35:43.385Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Laxmi Singh" in #userName
+2026-10-16T06:35:43.699Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "lax@example.com" in #userEmail
+2026-10-16T06:35:44.000Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Delhi" in #currentAddress
+2026-10-16T06:35:45.896Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Noida" in #permanentAddress
+2026-10-16T06:35:46.959Z [INFO] [W1] [TC10 - Text Box: Valid data] Click #submit
+2026-10-16T06:35:48.485Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #name contains "Laxmi Singh"
+2026-10-16T06:35:48.649Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #email contains "lax@example.com"
+2026-10-16T06:35:51.036Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST END | status: passed
+2026-10-16T06:35:51.088Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST START
+2026-10-16T06:35:51.267Z [INFO] [W1] [TC10 - Text Box: Invalid email] Open page /text-box
+2026-10-16T06:35:53.582Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Laxmi Singh" in #userName
+2026-10-16T06:35:53.785Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "laxmi-invalid-email" in #userEmail
+2026-10-16T06:35:53.885Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Delhi" in #currentAddress
+2026-10-16T06:35:54.865Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Noida" in #permanentAddress
+2026-10-16T06:35:55.529Z [INFO] [W1] [TC10 - Text Box: Invalid email] Click #submit
+2026-10-16T06:35:56.652Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST START
+2026-10-16T06:35:56.982Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #userEmail has class "field-error"
+2026-10-16T06:35:57.146Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /frames
+2026-10-16T06:35:57.247Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #output #name appears 0 time(s)
+2026-10-16T06:35:58.534Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST END | status: passed
+2026-10-16T06:35:58.580Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST START
+2026-10-16T06:35:58.780Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Open page /text-box
+2026-10-16T06:35:59.330Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame1 has text "This is a sample page"
+2026-10-16T06:36:00.355Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame2 has text "This is a sample page"
+2026-10-16T06:36:01.285Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Laxmi O'Neil-Singh" in #userName
+2026-10-16T06:36:02.154Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "laxmi.oneil@example.com" in #userEmail
+2026-10-16T06:36:03.472Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Delhi" in #currentAddress
+2026-10-16T06:36:04.901Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /nestedframes
+2026-10-16T06:36:05.508Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Noida" in #permanentAddress
+2026-10-16T06:36:06.516Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Click #submit
+2026-10-16T06:36:07.168Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in frame #frame1 contains "Parent frame"
+2026-10-16T06:36:07.686Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #name contains "Laxmi O'Neil-Singh"
+2026-10-16T06:36:07.942Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #email contains "laxmi.oneil@example.com"
+2026-10-16T06:36:08.312Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in nested frame #frame1 > iframe contains "Child Iframe"
+2026-10-16T06:36:09.376Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /browser-windows
+2026-10-16T06:36:10.514Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Click #tabButton and read #sampleHeading from the new tab
+2026-10-16T06:36:10.861Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST END | status: passed
+2026-10-16T06:36:11.001Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T06:36:11.554Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Open page /automation-practice-form
+2026-10-16T06:36:12.015Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify new tab heading is "This is a sample page"
+2026-10-16T06:36:12.031Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #tabButton is visible
+2026-10-16T06:36:12.990Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST END | status: passed
+2026-10-16T06:36:13.106Z [INFO] [W0] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T06:36:13.333Z [INFO] [W0] [TC01 - Complete Practice Form registration] Open page /automation-practice-form
+2026-10-16T06:36:14.824Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:36:16.831Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T06:36:17.038Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content is hidden
+2026-10-16T06:36:17.314Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "Laxmi" in #firstName
+2026-10-16T06:36:17.769Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "Singh" in #lastName
+2026-10-16T06:36:18.379Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click text="Female"
+2026-10-16T06:36:18.984Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "9876543210" in #userNumber
+2026-10-16T06:36:19.147Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:36:19.407Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T06:36:19.481Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Singh" in #lastName
+2026-10-16T06:36:19.560Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T06:36:19.672Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "9876543210"
+2026-10-16T06:36:19.961Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "lax@example.com" in #userEmail
+2026-10-16T06:36:20.456Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Female"
+2026-10-16T06:36:20.874Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "9876543210" in #userNumber
+2026-10-16T06:36:21.088Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Maths" in #subjectsInput
+2026-10-16T06:36:21.330Z [INFO] [W0] [TC01 - Complete Practice Form registration] Press Enter on #subjectsInput
+2026-10-16T06:36:21.580Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Sports"
+2026-10-16T06:36:21.805Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Delhi" in #currentAddress
+2026-10-16T06:36:21.941Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #state
+2026-10-16T06:36:22.212Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="NCR"
+2026-10-16T06:36:22.410Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #city
+2026-10-16T06:36:22.591Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Delhi"
+2026-10-16T06:36:22.818Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #submit (forced)
+2026-10-16T06:36:23.005Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T06:36:23.092Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T06:36:23.185Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "lax@example.com"
+2026-10-16T06:36:23.270Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Female"
+2026-10-16T06:36:23.358Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "9876543210"
+2026-10-16T06:36:23.420Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Maths"
+2026-10-16T06:36:23.484Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Sports"
+2026-10-16T06:36:23.539Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "NCR Delhi"
+2026-10-16T06:36:23.601Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #closeLargeModal
+2026-10-16T06:36:23.737Z [INFO] [W0] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T06:36:24.686Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST END | status: passed
+2026-10-16T06:36:29.151Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] TEST START
+2026-10-16T06:36:29.346Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Open page /webtables
+2026-10-16T06:36:31.622Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #addNewRecordButton
+2026-10-16T06:36:32.994Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "Anita" in #firstName
+2026-10-16T06:36:34.104Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "Verma" in #lastName
+2026-10-16T06:36:34.942Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #userEmail
+2026-10-16T06:36:35.343Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "28" in #age
+2026-10-16T06:36:35.645Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "50000" in #salary
+2026-10-16T06:36:35.823Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "QA" in #department
+2026-10-16T06:36:35.995Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:36:36.246Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #searchBox
+2026-10-16T06:36:36.417Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "Anita"
+2026-10-16T06:36:36.503Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "28"
+2026-10-16T06:36:36.574Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click span[title="Edit"] >> nth=0
+2026-10-16T06:36:36.741Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "30" in #age
+2026-10-16T06:36:36.887Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:36:37.180Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "30"
+2026-10-16T06:36:37.290Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click span[title="Delete"] >> nth=0
+2026-10-16T06:36:37.510Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table does not contain "anita@example.com"
+2026-10-16T06:36:38.804Z [INFO] [W0] [TC01 - Complete Practice Form registration] Press key Escape
+2026-10-16T06:36:38.913Z [INFO] [W0] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T06:36:39.095Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content is hidden
+2026-10-16T06:36:40.036Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] TEST END | status: passed
+2026-10-16T06:36:40.274Z [INFO] [W0] [TC01 - Complete Practice Form registration] TEST END | status: passed
+2026-10-16T06:58:38.938Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST START
+2026-10-16T06:58:39.670Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Open page /alerts
+2026-10-16T06:58:45.052Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #alertButton and accept the dialog
+2026-10-16T06:58:45.420Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify simple alert message is "You clicked a button"
+2026-10-16T06:58:45.445Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #timerAlertButton and accept the dialog
+2026-10-16T06:58:51.669Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify timer alert message is "This alert appeared after 5 seconds"
+2026-10-16T06:58:51.681Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and accept the dialog
+2026-10-16T06:58:51.850Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify confirm alert message is "Do you confirm action?"
+2026-10-16T06:58:51.864Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Ok"
+2026-10-16T06:58:51.943Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and dismiss the dialog
+2026-10-16T06:58:52.136Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Cancel"
+2026-10-16T06:58:52.188Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #promtButton and accept the dialog
+2026-10-16T06:58:52.371Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify prompt alert message is "Please enter your name"
+2026-10-16T06:58:52.386Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #promptResult contains "You entered Laxmi"
+2026-10-16T06:58:53.044Z [INFO] [W0] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST END | status: passed
+2026-10-16T06:58:58.567Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST START
+2026-10-16T06:58:58.756Z [INFO] [W1] [TC10 - Text Box: Valid data] Open page /text-box
+2026-10-16T06:59:00.822Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Laxmi Singh" in #userName
+2026-10-16T06:59:01.035Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "lax@example.com" in #userEmail
+2026-10-16T06:59:01.113Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Delhi" in #currentAddress
+2026-10-16T06:59:02.134Z [INFO] [W1] [TC10 - Text Box: Valid data] Type "Noida" in #permanentAddress
+2026-10-16T06:59:02.309Z [INFO] [W1] [TC10 - Text Box: Valid data] Click #submit
+2026-10-16T06:59:03.516Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #name contains "Laxmi Singh"
+2026-10-16T06:59:03.771Z [INFO] [W1] [TC10 - Text Box: Valid data] Verify #output #email contains "lax@example.com"
+2026-10-16T06:59:05.643Z [INFO] [W1] [TC10 - Text Box: Valid data] TEST END | status: passed
+2026-10-16T06:59:05.694Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST START
+2026-10-16T06:59:05.899Z [INFO] [W1] [TC10 - Text Box: Invalid email] Open page /text-box
+2026-10-16T06:59:08.015Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Laxmi Singh" in #userName
+2026-10-16T06:59:08.259Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "laxmi-invalid-email" in #userEmail
+2026-10-16T06:59:09.058Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Delhi" in #currentAddress
+2026-10-16T06:59:09.360Z [INFO] [W1] [TC10 - Text Box: Invalid email] Type "Noida" in #permanentAddress
+2026-10-16T06:59:10.050Z [INFO] [W1] [TC10 - Text Box: Invalid email] Click #submit
+2026-10-16T06:59:10.672Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #userEmail has class "field-error"
+2026-10-16T06:59:10.937Z [INFO] [W1] [TC10 - Text Box: Invalid email] Verify #output #name appears 0 time(s)
+2026-10-16T06:59:11.547Z [INFO] [W1] [TC10 - Text Box: Invalid email] TEST END | status: passed
+2026-10-16T06:59:11.603Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST START
+2026-10-16T06:59:11.752Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Open page /text-box
+2026-10-16T06:59:13.835Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Laxmi O'Neil-Singh" in #userName
+2026-10-16T06:59:13.955Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "laxmi.oneil@example.com" in #userEmail
+2026-10-16T06:59:14.091Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Delhi" in #currentAddress
+2026-10-16T06:59:14.500Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST START
+2026-10-16T06:59:14.685Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /frames
+2026-10-16T06:59:14.855Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Type "Noida" in #permanentAddress
+2026-10-16T06:59:15.292Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Click #submit
+2026-10-16T06:59:16.188Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #name contains "Laxmi O'Neil-Singh"
+2026-10-16T06:59:16.399Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] Verify #output #email contains "laxmi.oneil@example.com"
+2026-10-16T06:59:16.924Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame1 has text "This is a sample page"
+2026-10-16T06:59:17.168Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame2 has text "This is a sample page"
+2026-10-16T06:59:17.365Z [INFO] [W1] [TC10 - Text Box: Special characters in the name] TEST END | status: passed
+2026-10-16T06:59:17.487Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T06:59:17.654Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Open page /automation-practice-form
+2026-10-16T06:59:17.811Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /nestedframes
+2026-10-16T06:59:18.664Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in frame #frame1 contains "Parent frame"
+2026-10-16T06:59:19.153Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify body in nested frame #frame1 > iframe contains "Child Iframe"
+2026-10-16T06:59:19.416Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Open page /browser-windows
+2026-10-16T06:59:19.876Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:59:20.277Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Click #tabButton and read #sampleHeading from the new tab
+2026-10-16T06:59:20.995Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify new tab heading is "This is a sample page"
+2026-10-16T06:59:21.010Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] Verify #tabButton is visible
+2026-10-16T06:59:21.144Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content is hidden
+2026-10-16T06:59:21.246Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "Laxmi" in #firstName
+2026-10-16T06:59:21.511Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "Singh" in #lastName
+2026-10-16T06:59:22.035Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click text="Female"
+2026-10-16T06:59:22.890Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Type "9876543210" in #userNumber
+2026-10-16T06:59:23.053Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T06:59:23.267Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T06:59:23.282Z [INFO] [W0] [TC05 - Frames, nested frames and new browser tab] TEST END | status: passed
+2026-10-16T06:59:23.352Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T06:59:23.444Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "9876543210"
+2026-10-16T06:59:23.594Z [INFO] [W0] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T06:59:23.763Z [INFO] [W0] [TC01 - Complete Practice Form registration] Open page /automation-practice-form
+2026-10-16T06:59:25.496Z [INFO] [W1] [TC02 - Practice Form validation, then successful submit] TEST END | status: passed
+2026-10-16T06:59:26.109Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T06:59:26.284Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Singh" in #lastName
+2026-10-16T06:59:27.064Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "lax@example.com" in #userEmail
+2026-10-16T06:59:27.217Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Female"
+2026-10-16T06:59:27.531Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "9876543210" in #userNumber
+2026-10-16T06:59:27.831Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Maths" in #subjectsInput
+2026-10-16T06:59:27.992Z [INFO] [W0] [TC01 - Complete Practice Form registration] Press Enter on #subjectsInput
+2026-10-16T06:59:28.563Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Sports"
+2026-10-16T06:59:28.996Z [INFO] [W0] [TC01 - Complete Practice Form registration] Type "Delhi" in #currentAddress
+2026-10-16T06:59:29.136Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #state
+2026-10-16T06:59:29.435Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="NCR"
+2026-10-16T06:59:29.675Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #city
+2026-10-16T06:59:29.848Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click text="Delhi"
+2026-10-16T06:59:30.042Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #submit (forced)
+2026-10-16T06:59:30.197Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T06:59:30.209Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] TEST START
+2026-10-16T06:59:30.280Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T06:59:30.351Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "lax@example.com"
+2026-10-16T06:59:30.416Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Open page /webtables
+2026-10-16T06:59:30.428Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Female"
+2026-10-16T06:59:30.501Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "9876543210"
+2026-10-16T06:59:30.563Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Maths"
+2026-10-16T06:59:30.624Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Sports"
+2026-10-16T06:59:30.677Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content contains "NCR Delhi"
+2026-10-16T06:59:30.730Z [INFO] [W0] [TC01 - Complete Practice Form registration] Click #closeLargeModal
+2026-10-16T06:59:30.908Z [INFO] [W0] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T06:59:33.006Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #addNewRecordButton
+2026-10-16T06:59:33.821Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "Anita" in #firstName
+2026-10-16T06:59:34.075Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "Verma" in #lastName
+2026-10-16T06:59:34.686Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #userEmail
+2026-10-16T06:59:35.078Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "28" in #age
+2026-10-16T06:59:35.462Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "50000" in #salary
+2026-10-16T06:59:35.680Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "QA" in #department
+2026-10-16T06:59:35.811Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:59:36.050Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #searchBox
+2026-10-16T06:59:36.178Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "Anita"
+2026-10-16T06:59:36.252Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "28"
+2026-10-16T06:59:36.337Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click span[title="Edit"] >> nth=0
+2026-10-16T06:59:36.470Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Type "30" in #age
+2026-10-16T06:59:36.570Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T06:59:36.918Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "30"
+2026-10-16T06:59:36.986Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Click span[title="Delete"] >> nth=0
+2026-10-16T06:59:37.134Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] Verify role=table does not contain "anita@example.com"
+2026-10-16T06:59:39.235Z [INFO] [W1] [TC03 - Web Table add, edit, search and delete] TEST END | status: passed
+2026-10-16T06:59:45.957Z [INFO] [W0] [TC01 - Complete Practice Form registration] Press key Escape
+2026-10-16T06:59:46.030Z [INFO] [W0] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T06:59:46.201Z [INFO] [W0] [TC01 - Complete Practice Form registration] Verify .modal-content is hidden
+2026-10-16T06:59:47.056Z [INFO] [W0] [TC01 - Complete Practice Form registration] TEST END | status: passed
+2026-10-16T06:59:48.855Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST START
+2026-10-16T06:59:55.116Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Open page /alerts
+2026-10-16T07:00:00.901Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #alertButton and accept the dialog
+2026-10-16T07:00:02.672Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify simple alert message is "You clicked a button"
+2026-10-16T07:00:02.707Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #timerAlertButton and accept the dialog
+2026-10-16T07:00:08.124Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify timer alert message is "This alert appeared after 5 seconds"
+2026-10-16T07:00:08.142Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and accept the dialog
+2026-10-16T07:00:08.951Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify confirm alert message is "Do you confirm action?"
+2026-10-16T07:00:08.968Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Ok"
+2026-10-16T07:00:09.152Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and dismiss the dialog
+2026-10-16T07:00:09.610Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Cancel"
+2026-10-16T07:00:09.785Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #promtButton and accept the dialog
+2026-10-16T07:00:10.191Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify prompt alert message is "Please enter your name"
+2026-10-16T07:00:10.207Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #promptResult contains "You entered Laxmi"
+2026-10-16T07:00:11.411Z [INFO] [W2] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST END | status: passed
+2026-10-16T07:00:18.971Z [INFO] [W3] [TC10 - Text Box: Valid data] TEST START
+2026-10-16T07:00:19.875Z [INFO] [W3] [TC10 - Text Box: Valid data] Open page /text-box
+2026-10-16T07:00:23.880Z [INFO] [W3] [TC10 - Text Box: Valid data] Type "Laxmi Singh" in #userName
+2026-10-16T07:00:24.607Z [INFO] [W3] [TC10 - Text Box: Valid data] Type "lax@example.com" in #userEmail
+2026-10-16T07:00:24.721Z [INFO] [W3] [TC10 - Text Box: Valid data] Type "Delhi" in #currentAddress
+2026-10-16T07:00:25.955Z [INFO] [W3] [TC10 - Text Box: Valid data] Type "Noida" in #permanentAddress
+2026-10-16T07:00:26.161Z [INFO] [W3] [TC10 - Text Box: Valid data] Click #submit
+2026-10-16T07:00:26.530Z [INFO] [W3] [TC10 - Text Box: Valid data] Verify #output #name contains "Laxmi Singh"
+2026-10-16T07:00:26.702Z [INFO] [W3] [TC10 - Text Box: Valid data] Verify #output #email contains "lax@example.com"
+2026-10-16T07:00:29.208Z [INFO] [W3] [TC10 - Text Box: Valid data] TEST END | status: passed
+2026-10-16T07:00:29.296Z [INFO] [W3] [TC10 - Text Box: Invalid email] TEST START
+2026-10-16T07:00:30.747Z [INFO] [W3] [TC10 - Text Box: Invalid email] Open page /text-box
+2026-10-16T07:00:34.654Z [INFO] [W3] [TC10 - Text Box: Invalid email] Type "Laxmi Singh" in #userName
+2026-10-16T07:00:35.177Z [INFO] [W3] [TC10 - Text Box: Invalid email] Type "laxmi-invalid-email" in #userEmail
+2026-10-16T07:00:36.023Z [INFO] [W3] [TC10 - Text Box: Invalid email] Type "Delhi" in #currentAddress
+2026-10-16T07:00:36.200Z [INFO] [W3] [TC10 - Text Box: Invalid email] Type "Noida" in #permanentAddress
+2026-10-16T07:00:36.697Z [INFO] [W3] [TC10 - Text Box: Invalid email] Click #submit
+2026-10-16T07:00:37.251Z [INFO] [W3] [TC10 - Text Box: Invalid email] Verify #userEmail has class "field-error"
+2026-10-16T07:00:37.882Z [INFO] [W3] [TC10 - Text Box: Invalid email] Verify #output #name appears 0 time(s)
+2026-10-16T07:00:39.589Z [INFO] [W3] [TC10 - Text Box: Invalid email] TEST END | status: passed
+2026-10-16T07:00:39.643Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] TEST START
+2026-10-16T07:00:40.286Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Open page /text-box
+2026-10-16T07:00:44.040Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] TEST START
+2026-10-16T07:00:44.484Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Type "Laxmi O'Neil-Singh" in #userName
+2026-10-16T07:00:44.724Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Open page /frames
+2026-10-16T07:00:45.131Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Type "laxmi.oneil@example.com" in #userEmail
+2026-10-16T07:00:45.915Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Type "Delhi" in #currentAddress
+2026-10-16T07:00:46.037Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Type "Noida" in #permanentAddress
+2026-10-16T07:00:46.120Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Click #submit
+2026-10-16T07:00:46.671Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Verify #output #name contains "Laxmi O'Neil-Singh"
+2026-10-16T07:00:47.149Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] Verify #output #email contains "laxmi.oneil@example.com"
+2026-10-16T07:00:48.544Z [INFO] [W3] [TC10 - Text Box: Special characters in the name] TEST END | status: passed
+2026-10-16T07:00:48.679Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame1 has text "This is a sample page"
+2026-10-16T07:00:48.900Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T07:00:49.409Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame2 has text "This is a sample page"
+2026-10-16T07:00:49.703Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Open page /automation-practice-form
+2026-10-16T07:00:50.335Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Open page /nestedframes
+2026-10-16T07:00:51.550Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify body in frame #frame1 contains "Parent frame"
+2026-10-16T07:00:52.209Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify body in nested frame #frame1 > iframe contains "Child Iframe"
+2026-10-16T07:00:52.380Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Open page /browser-windows
+2026-10-16T07:00:53.660Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Click #tabButton and read #sampleHeading from the new tab
+2026-10-16T07:00:54.736Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T07:00:56.509Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify new tab heading is "This is a sample page"
+2026-10-16T07:00:56.528Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] Verify #tabButton is visible
+2026-10-16T07:00:56.690Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Verify .modal-content is hidden
+2026-10-16T07:00:56.811Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Type "Laxmi" in #firstName
+2026-10-16T07:00:57.051Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Type "Singh" in #lastName
+2026-10-16T07:00:57.232Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Click text="Female"
+2026-10-16T07:00:57.633Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Type "9876543210" in #userNumber
+2026-10-16T07:00:57.659Z [INFO] [W2] [TC05 - Frames, nested frames and new browser tab] TEST END | status: passed
+2026-10-16T07:00:57.782Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T07:00:58.060Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T07:00:58.169Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T07:00:58.279Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "9876543210"
+2026-10-16T07:00:58.320Z [INFO] [W2] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T07:00:59.244Z [INFO] [W2] [TC01 - Complete Practice Form registration] Open page /automation-practice-form
+2026-10-16T07:00:59.700Z [INFO] [W3] [TC02 - Practice Form validation, then successful submit] TEST END | status: passed
+2026-10-16T07:01:03.420Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T07:01:04.420Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "Singh" in #lastName
+2026-10-16T07:01:04.760Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "lax@example.com" in #userEmail
+2026-10-16T07:01:05.031Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click text="Female"
+2026-10-16T07:01:05.453Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "9876543210" in #userNumber
+2026-10-16T07:01:05.619Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "Maths" in #subjectsInput
+2026-10-16T07:01:05.804Z [INFO] [W2] [TC01 - Complete Practice Form registration] Press Enter on #subjectsInput
+2026-10-16T07:01:06.063Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click text="Sports"
+2026-10-16T07:01:06.381Z [INFO] [W2] [TC01 - Complete Practice Form registration] Type "Delhi" in #currentAddress
+2026-10-16T07:01:06.519Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click #state
+2026-10-16T07:01:06.840Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click text="NCR"
+2026-10-16T07:01:07.144Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click #city
+2026-10-16T07:01:07.479Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click text="Delhi"
+2026-10-16T07:01:07.857Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click #submit (forced)
+2026-10-16T07:01:08.104Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] TEST START
+2026-10-16T07:01:08.157Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T07:01:08.275Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T07:01:08.445Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "lax@example.com"
+2026-10-16T07:01:08.581Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Female"
+2026-10-16T07:01:08.656Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "9876543210"
+2026-10-16T07:01:08.730Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Maths"
+2026-10-16T07:01:08.925Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Sports"
+2026-10-16T07:01:09.137Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content contains "NCR Delhi"
+2026-10-16T07:01:09.255Z [INFO] [W2] [TC01 - Complete Practice Form registration] Click #closeLargeModal
+2026-10-16T07:01:09.493Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Open page /webtables
+2026-10-16T07:01:09.604Z [INFO] [W2] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T07:01:13.324Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Click #addNewRecordButton
+2026-10-16T07:01:14.486Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "Anita" in #firstName
+2026-10-16T07:01:14.770Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "Verma" in #lastName
+2026-10-16T07:01:14.874Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #userEmail
+2026-10-16T07:01:14.983Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "28" in #age
+2026-10-16T07:01:15.182Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "50000" in #salary
+2026-10-16T07:01:15.366Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "QA" in #department
+2026-10-16T07:01:15.596Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T07:01:15.796Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #searchBox
+2026-10-16T07:01:15.909Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "Anita"
+2026-10-16T07:01:16.023Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "28"
+2026-10-16T07:01:16.087Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Click span[title="Edit"] >> nth=0
+2026-10-16T07:01:16.306Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Type "30" in #age
+2026-10-16T07:01:16.398Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T07:01:16.758Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "30"
+2026-10-16T07:01:16.851Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Click span[title="Delete"] >> nth=0
+2026-10-16T07:01:17.036Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] Verify role=table does not contain "anita@example.com"
+2026-10-16T07:01:17.980Z [INFO] [W3] [TC03 - Web Table add, edit, search and delete] TEST END | status: passed
+2026-10-16T07:01:24.675Z [INFO] [W2] [TC01 - Complete Practice Form registration] Press key Escape
+2026-10-16T07:01:24.795Z [INFO] [W2] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T07:01:24.984Z [INFO] [W2] [TC01 - Complete Practice Form registration] Verify .modal-content is hidden
+2026-10-16T07:01:25.452Z [INFO] [W2] [TC01 - Complete Practice Form registration] TEST END | status: passed
+2026-10-16T07:01:30.804Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST START
+2026-10-16T07:01:34.683Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Open page /alerts
+2026-10-16T07:01:37.680Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #alertButton and accept the dialog
+2026-10-16T07:01:39.769Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify simple alert message is "You clicked a button"
+2026-10-16T07:01:39.791Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #timerAlertButton and accept the dialog
+2026-10-16T07:01:45.961Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify timer alert message is "This alert appeared after 5 seconds"
+2026-10-16T07:01:45.975Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and accept the dialog
+2026-10-16T07:01:46.565Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify confirm alert message is "Do you confirm action?"
+2026-10-16T07:01:46.580Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Ok"
+2026-10-16T07:01:46.814Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #confirmButton and dismiss the dialog
+2026-10-16T07:01:47.199Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #confirmResult contains "You selected Cancel"
+2026-10-16T07:01:47.327Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Click #promtButton and accept the dialog
+2026-10-16T07:01:47.749Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify prompt alert message is "Please enter your name"
+2026-10-16T07:01:47.759Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] Verify #promptResult contains "You entered Laxmi"
+2026-10-16T07:01:48.328Z [INFO] [W4] [TC04 - Handle simple, timer, confirm and prompt alerts] TEST END | status: passed
+2026-10-16T07:01:57.991Z [INFO] [W5] [TC10 - Text Box: Valid data] TEST START
+2026-10-16T07:01:58.372Z [INFO] [W5] [TC10 - Text Box: Valid data] Open page /text-box
+2026-10-16T07:02:00.886Z [INFO] [W5] [TC10 - Text Box: Valid data] Type "Laxmi Singh" in #userName
+2026-10-16T07:02:02.558Z [INFO] [W5] [TC10 - Text Box: Valid data] Type "lax@example.com" in #userEmail
+2026-10-16T07:02:03.147Z [INFO] [W5] [TC10 - Text Box: Valid data] Type "Delhi" in #currentAddress
+2026-10-16T07:02:04.270Z [INFO] [W5] [TC10 - Text Box: Valid data] Type "Noida" in #permanentAddress
+2026-10-16T07:02:05.030Z [INFO] [W5] [TC10 - Text Box: Valid data] Click #submit
+2026-10-16T07:02:05.983Z [INFO] [W5] [TC10 - Text Box: Valid data] Verify #output #name contains "Laxmi Singh"
+2026-10-16T07:02:06.245Z [INFO] [W5] [TC10 - Text Box: Valid data] Verify #output #email contains "lax@example.com"
+2026-10-16T07:02:06.852Z [INFO] [W5] [TC10 - Text Box: Valid data] TEST END | status: passed
+2026-10-16T07:02:06.905Z [INFO] [W5] [TC10 - Text Box: Invalid email] TEST START
+2026-10-16T07:02:07.349Z [INFO] [W5] [TC10 - Text Box: Invalid email] Open page /text-box
+2026-10-16T07:02:10.006Z [INFO] [W5] [TC10 - Text Box: Invalid email] Type "Laxmi Singh" in #userName
+2026-10-16T07:02:11.180Z [INFO] [W5] [TC10 - Text Box: Invalid email] Type "laxmi-invalid-email" in #userEmail
+2026-10-16T07:02:12.252Z [INFO] [W5] [TC10 - Text Box: Invalid email] Type "Delhi" in #currentAddress
+2026-10-16T07:02:13.002Z [INFO] [W5] [TC10 - Text Box: Invalid email] Type "Noida" in #permanentAddress
+2026-10-16T07:02:13.645Z [INFO] [W5] [TC10 - Text Box: Invalid email] Click #submit
+2026-10-16T07:02:13.850Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] TEST START
+2026-10-16T07:02:14.213Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Open page /frames
+2026-10-16T07:02:14.351Z [INFO] [W5] [TC10 - Text Box: Invalid email] Verify #userEmail has class "field-error"
+2026-10-16T07:02:14.609Z [INFO] [W5] [TC10 - Text Box: Invalid email] Verify #output #name appears 0 time(s)
+2026-10-16T07:02:15.056Z [INFO] [W5] [TC10 - Text Box: Invalid email] TEST END | status: passed
+2026-10-16T07:02:15.091Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] TEST START
+2026-10-16T07:02:15.453Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Open page /text-box
+2026-10-16T07:02:17.207Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame1 has text "This is a sample page"
+2026-10-16T07:02:18.058Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Type "Laxmi O'Neil-Singh" in #userName
+2026-10-16T07:02:19.071Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify #sampleHeading in frame #frame2 has text "This is a sample page"
+2026-10-16T07:02:19.550Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Type "laxmi.oneil@example.com" in #userEmail
+2026-10-16T07:02:20.499Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Open page /nestedframes
+2026-10-16T07:02:20.856Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Type "Delhi" in #currentAddress
+2026-10-16T07:02:21.702Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Type "Noida" in #permanentAddress
+2026-10-16T07:02:22.673Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Click #submit
+2026-10-16T07:02:22.770Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify body in frame #frame1 contains "Parent frame"
+2026-10-16T07:02:23.119Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify body in nested frame #frame1 > iframe contains "Child Iframe"
+2026-10-16T07:02:23.360Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Verify #output #name contains "Laxmi O'Neil-Singh"
+2026-10-16T07:02:23.604Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] Verify #output #email contains "laxmi.oneil@example.com"
+2026-10-16T07:02:24.198Z [INFO] [W5] [TC10 - Text Box: Special characters in the name] TEST END | status: passed
+2026-10-16T07:02:24.209Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Open page /browser-windows
+2026-10-16T07:02:24.395Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] TEST START
+2026-10-16T07:02:24.733Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Open page /automation-practice-form
+2026-10-16T07:02:26.057Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Click #tabButton and read #sampleHeading from the new tab
+2026-10-16T07:02:27.463Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T07:02:29.092Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify new tab heading is "This is a sample page"
+2026-10-16T07:02:29.113Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] Verify #tabButton is visible
+2026-10-16T07:02:29.363Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Verify .modal-content is hidden
+2026-10-16T07:02:29.945Z [INFO] [W4] [TC05 - Frames, nested frames and new browser tab] TEST END | status: passed
+2026-10-16T07:02:30.031Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Type "Laxmi" in #firstName
+2026-10-16T07:02:30.111Z [INFO] [W4] [TC01 - Complete Practice Form registration] TEST START
+2026-10-16T07:02:30.699Z [INFO] [W4] [TC01 - Complete Practice Form registration] Open page /automation-practice-form
+2026-10-16T07:02:30.927Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Type "Singh" in #lastName
+2026-10-16T07:02:31.530Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Click text="Female"
+2026-10-16T07:02:32.174Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Type "9876543210" in #userNumber
+2026-10-16T07:02:32.395Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Click #submit (forced)
+2026-10-16T07:02:32.751Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T07:02:33.047Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T07:02:33.333Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] Verify .modal-content contains "9876543210"
+2026-10-16T07:02:34.002Z [INFO] [W5] [TC02 - Practice Form validation, then successful submit] TEST END | status: passed
+2026-10-16T07:02:34.554Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "Laxmi" in #firstName
+2026-10-16T07:02:34.872Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "Singh" in #lastName
+2026-10-16T07:02:35.163Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "lax@example.com" in #userEmail
+2026-10-16T07:02:35.920Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click text="Female"
+2026-10-16T07:02:37.139Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "9876543210" in #userNumber
+2026-10-16T07:02:37.523Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "Maths" in #subjectsInput
+2026-10-16T07:02:37.950Z [INFO] [W4] [TC01 - Complete Practice Form registration] Press Enter on #subjectsInput
+2026-10-16T07:02:38.390Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click text="Sports"
+2026-10-16T07:02:39.039Z [INFO] [W4] [TC01 - Complete Practice Form registration] Type "Delhi" in #currentAddress
+2026-10-16T07:02:39.314Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click #state
+2026-10-16T07:02:40.003Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click text="NCR"
+2026-10-16T07:02:40.393Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click #city
+2026-10-16T07:02:41.028Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click text="Delhi"
+2026-10-16T07:02:41.436Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] TEST START
+2026-10-16T07:02:41.593Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click #submit (forced)
+2026-10-16T07:02:41.843Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Open page /webtables
+2026-10-16T07:02:42.077Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Thanks for submitting the form"
+2026-10-16T07:02:42.465Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Laxmi Singh"
+2026-10-16T07:02:42.587Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "lax@example.com"
+2026-10-16T07:02:42.703Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Female"
+2026-10-16T07:02:42.885Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "9876543210"
+2026-10-16T07:02:42.987Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Maths"
+2026-10-16T07:02:43.082Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "Sports"
+2026-10-16T07:02:43.124Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content contains "NCR Delhi"
+2026-10-16T07:02:43.234Z [INFO] [W4] [TC01 - Complete Practice Form registration] Click #closeLargeModal
+2026-10-16T07:02:43.562Z [INFO] [W4] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T07:02:44.653Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #addNewRecordButton
+2026-10-16T07:02:46.882Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "Anita" in #firstName
+2026-10-16T07:02:47.748Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "Verma" in #lastName
+2026-10-16T07:02:48.186Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #userEmail
+2026-10-16T07:02:48.773Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "28" in #age
+2026-10-16T07:02:49.271Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "50000" in #salary
+2026-10-16T07:02:49.703Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "QA" in #department
+2026-10-16T07:02:49.937Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T07:02:50.415Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "anita@example.com" in #searchBox
+2026-10-16T07:02:50.797Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "Anita"
+2026-10-16T07:02:50.972Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "28"
+2026-10-16T07:02:51.105Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click span[title="Edit"] >> nth=0
+2026-10-16T07:02:51.620Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Type "30" in #age
+2026-10-16T07:02:51.959Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click #submit
+2026-10-16T07:02:52.439Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table contains "30"
+2026-10-16T07:02:52.681Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Click span[title="Delete"] >> nth=0
+2026-10-16T07:02:53.123Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] Verify role=table does not contain "anita@example.com"
+2026-10-16T07:02:53.682Z [INFO] [W5] [TC03 - Web Table add, edit, search and delete] TEST END | status: passed
+2026-10-16T07:02:58.709Z [INFO] [W4] [TC01 - Complete Practice Form registration] Press key Escape
+2026-10-16T07:02:58.966Z [INFO] [W4] [TC01 - Complete Practice Form registration] Wait until .modal-content is hidden
+2026-10-16T07:02:59.255Z [INFO] [W4] [TC01 - Complete Practice Form registration] Verify .modal-content is hidden
+2026-10-16T07:02:59.870Z [INFO] [W4] [TC01 - Complete Practice Form registration] TEST END | status: passed

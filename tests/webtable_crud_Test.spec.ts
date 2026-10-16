@@ -1,21 +1,11 @@
-import { test, expect } from '../fixtures/baseTest';
+import { test } from '../core/test';
 import { getTestData } from '../utils/dataReader';
 
-test('TC03 - Web Table add, edit, search and delete', { tag: '@smoke' }, async ({ webTablesPage }) => {
+test('TC03 - Web Table add, edit, search and delete', { tag: '@smoke' }, async ({ webTableFlow }) => {
   const data = getTestData('TC03');
-  await webTablesPage.openPage();
 
-  // Create
-  await webTablesPage.addRecord(data);
-  await webTablesPage.search(data.email);
-  await expect(webTablesPage.table).toContainText(data.firstName);
-  await expect(webTablesPage.table).toContainText(data.age);
-
-  // Update
-  await webTablesPage.editAge(data.newAge);
-  await expect(webTablesPage.table).toContainText(data.newAge);
-
-  // Delete
-  await webTablesPage.deleteFirstRow();
-  await expect(webTablesPage.table).not.toContainText(data.email);
+  await webTableFlow.addAndFindRecord(data);
+  await webTableFlow.verifyRecordShown(data);
+  await webTableFlow.updateAge(data);
+  await webTableFlow.deleteRecord(data);
 });

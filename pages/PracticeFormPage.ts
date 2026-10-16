@@ -1,59 +1,72 @@
-import { expect } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from '../core/BasePage';
 
 export class PracticeFormPage extends BasePage {
-  readonly firstName = this.page.locator('#firstName');
-  readonly lastName = this.page.locator('#lastName');
-  readonly email = this.page.locator('#userEmail');
-  readonly mobile = this.page.locator('#userNumber');
-  readonly subjects = this.page.locator('#subjectsInput');
-  readonly address = this.page.locator('#currentAddress');
-  readonly state = this.page.locator('#state');
-  readonly city = this.page.locator('#city');
-  readonly submitButton = this.page.locator('#submit');
-  readonly modal = this.page.locator('.modal-content');
+
+  readonly selectors = {
+    firstName: '#firstName',
+    lastName: '#lastName',
+    email: '#userEmail',
+    mobile: '#userNumber',
+    subjects: '#subjectsInput',
+    address: '#currentAddress',
+    state: '#state',
+    city: '#city',
+    submit: '#submit',
+    modal: '.modal-content',
+    closeButton: '#closeLargeModal',
+  };
+
+  private option(text: string): string {
+    return `text="${text}"`;
+  }
 
   async openPage() {
     await this.open('/automation-practice-form');
   }
 
-  // Fill every field (used in TC01)
-  async fillForm(data: any) {
-    await this.firstName.fill(data.firstName);
-    await this.lastName.fill(data.lastName);
-    await this.email.fill(data.email);
-    await this.page.getByText(data.gender, { exact: true }).click();
-    await this.mobile.fill(data.mobile);
-    await this.subjects.fill(data.subject);
-    await this.subjects.press('Enter');
-    await this.page.getByText(data.hobby, { exact: true }).click();
-    await this.address.fill(data.address);
-    await this.state.click();
-    await this.page.getByText(data.state, { exact: true }).click();
-    await this.city.click();
-    await this.page.getByText(data.city, { exact: true }).click();
-  }
+  async fillAllFields(data: any) {
+    await this.type(this.selectors.firstName, data.firstName);
+    await this.type(this.selectors.lastName, data.lastName);
+    await this.type(this.selectors.email, data.email);
 
-  // Fill only the mandatory fields (used in TC02)
-  async fillMandatory(data: any) {
-    await this.firstName.fill(data.firstName);
-    await this.lastName.fill(data.lastName);
-    await this.page.getByText(data.gender, { exact: true }).click();
-    await this.mobile.fill(data.mobile);
+    await this.click(this.option(data.gender));
+
+    await this.type(this.selectors.mobile, data.mobile);
+
+    await this.type(this.selectors.subjects, data.subject);
+    await this.press(this.selectors.subjects, 'Enter');
+
+    await this.click(this.option(data.hobby));
+
+    await this.type(this.selectors.address, data.address);
+
+    await this.click(this.selectors.state);
+    await this.click(this.option(data.state));
+
+    await this.click(this.selectors.city);
+    await this.click(this.option(data.city));
+  }
+  async fillMandatoryFields(data: any) {
+    await this.type(this.selectors.firstName, data.firstName);
+    await this.type(this.selectors.lastName, data.lastName);
+
+    await this.click(this.option(data.gender));
+
+    await this.type(this.selectors.mobile, data.mobile);
   }
 
   async submit() {
-    await this.submitButton.click({ force: true });   // force: ads can cover the button
+    await this.forceClick(this.selectors.submit);
   }
+  
+  async closeConfirmation() {
+    await this.click(this.selectors.closeButton);
 
-  // Close the popup with the Close button, and use the Escape key if the click did not close it
-  async closeModal() {
-    await this.page.getByRole('button', { name: 'Close' }).click();
+    const closed = await this.waitUntilHidden(this.selectors.modal);
 
-    try {
-      await expect(this.modal).toBeHidden();   // wait time comes from the expect timeout in the config
-    } catch {
-      await this.page.keyboard.press('Escape');
+    if (!closed) {
+      await this.pressKey('Escape');
+      await this.waitUntilHidden(this.selectors.modal);
     }
   }
 }

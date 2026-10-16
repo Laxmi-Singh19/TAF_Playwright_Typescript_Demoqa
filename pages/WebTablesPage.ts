@@ -1,48 +1,47 @@
-import { BasePage } from './BasePage';
+import { BasePage } from '../core/BasePage';
 
 export class WebTablesPage extends BasePage {
-  // Add / Edit form
-  readonly addButton = this.page.locator('#addNewRecordButton');
-  readonly firstName = this.page.locator('#firstName');
-  readonly lastName = this.page.locator('#lastName');
-  readonly email = this.page.locator('#userEmail');
-  readonly age = this.page.locator('#age');
-  readonly salary = this.page.locator('#salary');
-  readonly department = this.page.locator('#department');
-  readonly submitButton = this.page.locator('#submit');
-
-  // Table
-  readonly searchBox = this.page.locator('#searchBox');
-  readonly table = this.page.getByRole('table');
-  readonly editIcon = this.page.locator('span[title="Edit"]').first();
-  readonly deleteIcon = this.page.locator('span[title="Delete"]').first();
+  readonly selectors = {
+    addButton: '#addNewRecordButton',
+    firstName: '#firstName',
+    lastName: '#lastName',
+    email: '#userEmail',
+    age: '#age',
+    salary: '#salary',
+    department: '#department',
+    submit: '#submit',
+    searchBox: '#searchBox',
+    table: 'role=table',
+    editIcon: 'span[title="Edit"] >> nth=0',
+    deleteIcon: 'span[title="Delete"] >> nth=0',
+  };
 
   async openPage() {
     await this.open('/webtables');
   }
 
   async addRecord(data: any) {
-    await this.addButton.click();
-    await this.firstName.fill(data.firstName);
-    await this.lastName.fill(data.lastName);
-    await this.email.fill(data.email);
-    await this.age.fill(data.age);
-    await this.salary.fill(data.salary);
-    await this.department.fill(data.department);
-    await this.submitButton.click();
+    await this.click(this.selectors.addButton);
+    await this.type(this.selectors.firstName, data.firstName);
+    await this.type(this.selectors.lastName, data.lastName);
+    await this.type(this.selectors.email, data.email);
+    await this.type(this.selectors.age, data.age);
+    await this.type(this.selectors.salary, data.salary);
+    await this.type(this.selectors.department, data.department);
+    await this.click(this.selectors.submit);
   }
 
   async search(text: string) {
-    await this.searchBox.fill(text);
+    await this.type(this.selectors.searchBox, text);
   }
 
   async editAge(newAge: string) {
-    await this.editIcon.click();
-    await this.age.fill(newAge);
-    await this.submitButton.click();
+    await this.click(this.selectors.editIcon);
+    await this.type(this.selectors.age, newAge);
+    await this.click(this.selectors.submit);
   }
 
   async deleteFirstRow() {
-    await this.deleteIcon.click();
+    await this.click(this.selectors.deleteIcon);
   }
 }
