@@ -1,30 +1,29 @@
-import { BasePage } from './BasePage';
+import { BasePage } from '../core/BasePage';
 
 export class ProfilePage extends BasePage {
-  readonly userNameValue = this.page.locator('#userName-value');
-  readonly logoutButton = this.page.getByRole('button', { name: /log\s?out/i });   // "Logout" or "Log out"
-  readonly deleteIcon = this.page.locator('span[title="Delete"]').first();
-  readonly confirmDeleteButton = this.page.locator('#closeSmallModal-ok');
+  readonly selectors = {
+    userNameValue: '#userName-value',
+    logoutButton: 'button:text-matches("log\\s?out", "i")',   // "Logout" or "Log out"
+    deleteIcon: 'span[title="Delete"] >> nth=0',
+    confirmDelete: '#closeSmallModal-ok',
+  };
 
   async openPage() {
     await this.open('/profile');
   }
 
-  // Link of a book in the collection table, found by its title
-  bookLink(title: string) {
-    return this.page.getByRole('link', { name: title });
+  // Selector of a book link in the collection table, found by its title
+  bookLink(title: string): string {
+    return `a:has-text("${title}")`;
   }
 
   // Delete the first book: confirm the popup, and accept the alert that follows
   async deleteFirstBook() {
-    this.page.once('dialog', async (dialog) => {
-      try { await dialog.accept(); } catch { /* another listener already handled this alert */ }
-    });
-    await this.deleteIcon.click();
-    await this.confirmDeleteButton.click();
+    await this.click(this.selectors.deleteIcon);
+    await this.acceptDialogOnClick(this.selectors.confirmDelete);
   }
 
   async logout() {
-    await this.logoutButton.click();
+    await this.click(this.selectors.logoutButton);
   }
 }

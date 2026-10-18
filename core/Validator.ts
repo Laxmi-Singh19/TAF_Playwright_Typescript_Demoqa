@@ -60,6 +60,13 @@ export class Validator {
     });
   }
 
+  // Compare two numbers, for example an API status code or a count
+  async verifyNumberEquals(actual: number, expected: number, what: string) {
+    await step(`Verify ${what} is ${expected}`, async () => {
+      expect(actual, `${what}: expected ${expected} but got ${actual}`).toBe(expected);
+    });
+  }
+
   // A number must be bigger than a minimum, for example the size of a downloaded file
   async verifyGreaterThan(actual: number, minimum: number, what: string) {
     await step(`Verify ${what} (${actual}) is greater than ${minimum}`, async () => {

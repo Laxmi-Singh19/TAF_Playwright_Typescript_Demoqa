@@ -11,4 +11,5 @@ playwright/.cache/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-log/
+logs/
+allure-single-report/

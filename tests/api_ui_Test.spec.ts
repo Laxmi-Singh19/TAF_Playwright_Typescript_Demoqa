@@ -1,38 +1,30 @@
-import { test, expect } from '../fixtures/baseTest';
+import { test } from '../core/test';
 import { getTestData } from '../utils/dataReader';
-import { createUser, generateToken, addBookApi, getUserBooks, cleanupUser, uniqueName } from '../utils/apiHelper';
 
-test('TC08 - Set up data through the API, then verify and delete in the UI', { tag: '@sanity' }, async ({ request, loginPage, profilePage }) => {
+test('TC08 - Set up data through the API, then verify and delete in the UI', { tag: '@sanity' }, async ({ bookStoreApiFlow, bookStoreUiFlow }) => {
   const data = getTestData('TC08');
-  const userName = uniqueName(data.userNamePrefix);
 
-  // API setup: user, token, and one book
-  const userId = await createUser(request, userName, data.password);
-  const token = await generateToken(request, userName, data.password);
+  // API setup: user, token and one book
+  const user = await bookStoreApiFlow.createUser(data.userNamePrefix, data.password);
 
   try {
-    await addBookApi(request, userId, token, data.isbn);
+    const token = await bookStoreApiFlow.getToken(user);
+    await bookStoreApiFlow.addBook(user, token, data.isbn);
 
-    // API check: the book is in the user's collection
-    const booksBefore = await getUserBooks(request, userId, token);
-    expect(booksBefore).toHaveLength(1);
-    expect(booksBefore[0].isbn).toBe(data.isbn);
+    // API check: the book is in the collection
+    const booksBefore = await bookStoreApiFlow.getBooks(user, token);
+    await bookStoreApiFlow.verifySingleBook(booksBefore, data.isbn);
 
-    // UI check: log in, wait for the profile, and see the same book
-    await loginPage.openPage();
-    await loginPage.login(userName, data.password);
-    await expect(profilePage.userNameValue).toHaveText(userName);
-    await expect(profilePage.bookLink(data.bookTitle)).toBeVisible();
+    // UI check and action: the same book is visible, then it is deleted
+    await bookStoreUiFlow.loginAs(user);
+    await bookStoreUiFlow.verifyBookInProfile(data.bookTitle);
+    await bookStoreUiFlow.deleteBookAndVerify(data.bookTitle);
 
-    // UI action: delete the book and verify that it is gone
-    await profilePage.deleteFirstBook();
-    await expect(profilePage.bookLink(data.bookTitle)).toBeHidden();
-
-    // API check: the collection is now empty (a fresh token, because the UI login created a new one)
-    const freshToken = await generateToken(request, userName, data.password);
-    const booksAfter = await getUserBooks(request, userId, freshToken);
-    expect(booksAfter).toHaveLength(0);
+    // API check: the collection is empty (a fresh token, because the UI login created a new one)
+    const freshToken = await bookStoreApiFlow.getToken(user);
+    const booksAfter = await bookStoreApiFlow.getBooks(user, freshToken);
+    await bookStoreApiFlow.verifyNoBooks(booksAfter);
   } finally {
-    await cleanupUser(request, userId, userName, data.password);
+    await bookStoreApiFlow.cleanup(user);
   }
 });

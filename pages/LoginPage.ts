@@ -1,19 +1,19 @@
-import { BasePage } from './BasePage';
+import { BasePage } from '../core/BasePage';
 
 export class LoginPage extends BasePage {
-  readonly userNameInput = this.page.locator('#userName');
-  readonly passwordInput = this.page.locator('#password');
-  readonly loginButton = this.page.locator('#login');
+  readonly selectors = {
+    userName: '#userName',
+    password: '#password',
+    loginButton: '#login',
+  };
 
   async openPage() {
     await this.open('/login');
   }
 
-  // Enter the credentials and click Login
-  async login(userName: string, password: string) {
-    await this.userNameInput.fill(userName);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
-    await this.page.waitForURL('**/profile');   // wait until the login
+  async signIn(userName: string, password: string) {
+    await this.type(this.selectors.userName, userName);
+    await this.type(this.selectors.password, password);
+    await this.click(this.selectors.loginButton);
   }
 }

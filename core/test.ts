@@ -1,6 +1,8 @@
 import { test as base } from '@playwright/test';
 import { Validator } from './Validator';
 import { Logger } from './Logger';
+import { ApiClient } from './ApiClient';
+import { BookStoreApi } from '../services/BookStoreApi';
 import { PracticeFormPage } from '../pages/PracticeFormPage';
 import { WebTablesPage } from '../pages/WebTablesPage';
 import { TextBoxPage } from '../pages/TextBoxPage';
@@ -10,6 +12,9 @@ import { BrowserWindowsPage } from '../pages/BrowserWindowsPage';
 import { UploadDownloadPage } from '../pages/UploadDownloadPage';
 import { WidgetsPage } from '../pages/WidgetsPage';
 import { InteractionsPage } from '../pages/InteractionsPage';
+import { LoginPage } from '../pages/LoginPage';
+import { BookStorePage } from '../pages/BookStorePage';
+import { ProfilePage } from '../pages/ProfilePage';
 import { PracticeFormFlow } from '../business/PracticeFormFlow';
 import { WebTableFlow } from '../business/WebTableFlow';
 import { TextBoxFlow } from '../business/TextBoxFlow';
@@ -17,6 +22,8 @@ import { AlertsFlow } from '../business/AlertsFlow';
 import { FramesWindowsFlow } from '../business/FramesWindowsFlow';
 import { UploadDownloadFlow } from '../business/UploadDownloadFlow';
 import { WidgetsInteractionsFlow } from '../business/WidgetsInteractionsFlow';
+import { BookStoreApiFlow } from '../business/BookStoreApiFlow';
+import { BookStoreUiFlow } from '../business/BookStoreUiFlow';
 
 // The test function and the business flows that tests can use.
 // Tests import `test` from here, so they never import Playwright.
@@ -28,6 +35,8 @@ type Fixtures = {
   framesWindowsFlow: FramesWindowsFlow;
   uploadDownloadFlow: UploadDownloadFlow;
   widgetsInteractionsFlow: WidgetsInteractionsFlow;
+  bookStoreApiFlow: BookStoreApiFlow;
+  bookStoreUiFlow: BookStoreUiFlow;
   logContext: void;
 };
 
@@ -66,5 +75,13 @@ export const test = base.extend<Fixtures>({
 
   widgetsInteractionsFlow: async ({ page }, use) => {
     await use(new WidgetsInteractionsFlow(new WidgetsPage(page), new InteractionsPage(page), new Validator(page)));
+  },
+
+  bookStoreApiFlow: async ({ page, request }, use) => {
+    await use(new BookStoreApiFlow(new BookStoreApi(new ApiClient(request)), new Validator(page)));
+  },
+
+  bookStoreUiFlow: async ({ page }, use) => {
+    await use(new BookStoreUiFlow(new LoginPage(page), new BookStorePage(page), new ProfilePage(page), new Validator(page)));
   },
 });

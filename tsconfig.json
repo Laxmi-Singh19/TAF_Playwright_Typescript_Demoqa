@@ -10,5 +10,5 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
-  "include": ["core", "business", "pages", "fixtures", "utils", "tests", "playwright.config.ts"]
+  "include": ["core", "business", "services", "pages", "utils", "tests", "playwright.config.ts"]
 }
