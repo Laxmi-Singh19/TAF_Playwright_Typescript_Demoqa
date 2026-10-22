@@ -1,7 +1,8 @@
 # TAF_Demoqa - Playwright TypeScript Framework
 
-Test automation framework for https://demoqa.com. The code is split into layers, and only the
-`core` folder uses Playwright directly, so the framework stays tool-agnostic.
+Test automation framework for https://demoqa.com. The code is split into layers. UI actions
+go through a `UiDriver` interface, and only the driver talks to Playwright, so the UI layer
+does not depend on one tool.
 
 ## Layers
 | Layer | Folder | Purpose |
@@ -10,8 +11,15 @@ Test automation framework for https://demoqa.com. The code is split into layers,
 | Business | `business/` | What a user does (register, add a book, upload a file) |
 | UI actions | `pages/` | Selectors and page actions, built on the base page |
 | API service | `services/` | One method for each API endpoint |
-| Core | `core/` | Base page with all UI actions, API client, validator, logger, reporter, test fixtures |
+| Core | `core/` | Base page, UI driver, validator, API client, logger, reporter, test fixtures |
 | Data | `testdata/`, `utils/` | JSON test data and the data reader |
+
+## Tool independence (UI actions)
+- `core/UiDriver.ts` is the contract: it lists every UI action (open, click, type, upload, drag and drop...).
+- `core/PlaywrightDriver.ts` implements the contract with Playwright.
+- `core/BasePage.ts` works with the contract only and logs every action as a step.
+- `createDriver()` in `core/test.ts` is the single place where the tool is chosen.
+- To use another tool: write one new driver that implements `UiDriver`, and change one line in `createDriver()`.
 
 ## Test cases
 | ID | Test | Tag |
@@ -41,9 +49,27 @@ Test automation framework for https://demoqa.com. The code is split into layers,
 ## Logs and reports
 - `logs/execution.log`: every test, every step and every failure reason of the whole run
 - `logs/test-run.log`: framework logger with levels, test names and worker numbers
-- `playwright-report/`: HTML report (open it with `npm run report`)
-- Allure: `npm run allure:generate`, then `npm run allure:open`
+- `playwright-report/`: Playwright HTML report (open it with `npm run report`)
+- `custom-report/index.html`: our own HTML report (summary, filters, steps, errors, screenshots), built by `core/HtmlReporter.ts`
+- Allure report: `npm run allure:generate`, then `npm run allure:open`
+- `allure-single-report/index.html`: Allure report in one single file, easy to send by email
+  (command: <paste the command you used here>)
 
 ## Remote execution
-Tests run on GitHub Actions on every push. Download the HTML report from the Artifacts
-section of the run.
+Tests run on GitHub Actions (Chromium) on every push. Download the HTML report from the
+Artifacts section of the run.
+
+## Status
+| Area | Status |
+|---|---|
+| Layered structure, Page Object Model | Done |
+| Base page with all UI actions, behind the `UiDriver` interface | Done |
+| Data-driven tests (JSON) | Done |
+| API service module | Done |
+| Logging and step-level reporting | Done |
+| Reports: Playwright HTML, custom HTML, Allure, single-file Allure | Done |
+| Local and remote execution (GitHub Actions) | Done |
+| Interface for assertions and the API client | Planned |
+| Configuration module, Excel reader | Planned |
+| Self-healing, mock, mobile | Planned |
+| Jenkins, Report Portal, Jira or Azure DevOps | Planned |

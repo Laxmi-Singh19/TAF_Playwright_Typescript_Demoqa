@@ -13,3 +13,4 @@ playwright/.cache/
 /playwright/.auth/
 logs/
 allure-single-report/
+custom-report/
