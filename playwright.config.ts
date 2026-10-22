@@ -14,7 +14,8 @@ export default defineConfig({
     ['list'],
     ['html', { open: 'never' }],
     ['allure-playwright'],
-    ['./core/LogReporter.ts'],      // writes logs/execution.log for ALL tests
+    ['./core/LogReporter.ts'],
+    ['./utils/customHtmlReporter.ts'],      // writes logs/execution.log for ALL tests
   ],
 
   use: {

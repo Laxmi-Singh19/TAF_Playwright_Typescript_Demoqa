@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laxmi's Report</title>
+<style>
+  :root { --bg:#f4f6fa; --card:#fff; --text:#1d2433; --muted:#6b7385; --line:#e3e7ef;
+          --pass:#1f9d55; --fail:#d64545; --skip:#d99a1e; --accent:#3b5bdb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151c; --card:#1b1f29; --text:#e8ebf2; --muted:#9aa3b5; --line:#2a3040; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+  header { background:var(--accent); color:#fff; padding:28px 40px; }
+  header h1 { margin:0 0 6px; font-size:30px; }
+  header p { margin:0; opacity:.9; }
+  main { max-width:1200px; margin:0 auto; padding:24px 20px 60px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; border-top:4px solid var(--accent); }
+  .card.pass { border-top-color:var(--pass); } .card.fail { border-top-color:var(--fail); } .card.skip { border-top-color:var(--skip); }
+  .card .n { font-size:32px; font-weight:700; } .card .l { color:var(--muted); font-size:13px; }
+  .bar { display:flex; height:12px; border-radius:6px; overflow:hidden; background:var(--line); margin-bottom:24px; }
+  .bar i { display:block; } .bar .p { background:var(--pass); } .bar .f { background:var(--fail); } .bar .s { background:var(--skip); }
+  .filters { margin-bottom:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .filters button { border:1px solid var(--line); background:var(--card); color:var(--text); padding:6px 14px; border-radius:20px; cursor:pointer; }
+  .filters button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; }
+  .badge { padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600; color:#fff; white-space:nowrap; }
+  .badge.passed { background:var(--pass); } .badge.failed { background:var(--fail); } .badge.skipped { background:var(--skip); }
+  .tag { background:var(--line); border-radius:4px; padding:2px 6px; font-size:12px; }
+  .err { background:rgba(214,69,69,.1); color:var(--fail); padding:8px; border-radius:6px; white-space:pre-wrap; font-size:12px; max-height:160px; overflow:auto; }
+  footer { text-align:center; color:var(--muted); font-size:12px; margin-top:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Laxmi's Report</h1>
+  <p>Run on 22 Oct 2026 at 09:06:52 &nbsp;|&nbsp; Duration 57.6 s</p>
+</header>
+<main>
+  <section class="cards">
+    <div class="card"><div class="n">12</div><div class="l">Total tests</div></div>
+    <div class="card pass"><div class="n">12</div><div class="l">Passed</div></div>
+    <div class="card fail"><div class="n">0</div><div class="l">Failed</div></div>
+    <div class="card skip"><div class="n">0</div><div class="l">Skipped</div></div>
+    <div class="card"><div class="n">100.0%</div><div class="l">Pass rate</div></div>
+  </section>
+  <div class="bar" title="pass / fail / skip">
+    <i class="p" style="width:100.00%"></i>
+    <i class="f" style="width:0.00%"></i>
+    <i class="s" style="width:0.00%"></i>
+  </div>
+  <div class="filters">
+    <button class="active" data-f="all">All</button>
+    <button data-f="passed">Passed</button>
+    <button data-f="failed">Failed</button>
+    <button data-f="skipped">Skipped</button>
+  </div>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>#</th><th>Test</th><th>Browser</th><th>Tags</th><th>Duration</th><th>Retries</th><th>Status</th></tr></thead>
+      <tbody>
+<tr class="row passed" data-status="passed">
+        <td>1</td>
+        <td>TC04 - Handle simple, timer, confirm and prompt alerts</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>13.91 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>2</td>
+        <td>TC08 - Set up data through the API, then verify and delete in the UI</td>
+        <td>chromium</td>
+        <td><span class="tag">@sanity</span></td>
+        <td>15.80 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>3</td>
+        <td>TC10 - Text Box: Valid data</td>
+        <td>chromium</td>
+        <td><span class="tag">@sanity</span></td>
+        <td>4.41 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>4</td>
+        <td>TC10 - Text Box: Invalid email</td>
+        <td>chromium</td>
+        <td><span class="tag">@sanity</span></td>
+        <td>3.74 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>5</td>
+        <td>TC07 - Book Store journey: login, add book, verify, delete, logout</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span></td>
+        <td>12.39 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>6</td>
+        <td>TC10 - Text Box: Special characters in the name</td>
+        <td>chromium</td>
+        <td><span class="tag">@sanity</span></td>
+        <td>3.12 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>7</td>
+        <td>TC02 - Practice Form validation, then successful submit</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>6.98 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>8</td>
+        <td>TC05 - Frames, nested frames and new browser tab</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>7.84 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>9</td>
+        <td>TC06 - Upload a file, then download a file and verify it</td>
+        <td>chromium</td>
+        <td><span class="tag">@sanity</span></td>
+        <td>4.06 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>10</td>
+        <td>TC03 - Web Table add, edit, search and delete</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span></td>
+        <td>5.37 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>11</td>
+        <td>TC09 - Date picker, auto-complete and drag and drop</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>6.36 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>12</td>
+        <td>TC01 - Complete Practice Form registration</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span></td>
+        <td>21.68 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>Laxmi's Report &middot; generated by customHtmlReporter</footer>
+</main>
+<script>
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.filters button').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var f = b.getAttribute('data-f');
+      document.querySelectorAll('tr.row').forEach(function (tr) {
+        tr.style.display = (f === 'all' || tr.getAttribute('data-status') === f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
