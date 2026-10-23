@@ -1,7 +1,5 @@
 import type { FullResult, Reporter, TestCase, TestResult } from '@playwright/test/reporter';
-// @ts-ignore Node.js built-in; its types are unavailable in this project configuration.
 import * as fs from 'fs';
-// @ts-ignore Node.js built-in; its types are unavailable in this project configuration.
 import * as path from 'path';
 import { REPORT_TITLE, Report, TestRecord } from '../core/report';
  
@@ -11,18 +9,15 @@ const OUTPUT_FILE = 'report.html';
 const esc = (s: string): string =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
  
-// Playwright error messages contain terminal colour codes; strip them for HTML
 const stripAnsi = (s: string): string => s.replace(/\u001b\[[0-9;]*m/g, '');
  
 class CustomHtmlReporter implements Reporter {
   private readonly report = new Report();
  
   printsToStdio(): boolean {
-    return false; // let the other reporters keep printing to the terminal
+    return false; 
   }
- 
-  // Called after every attempt; only the final attempt of a test is recorded,
-  // so retries do not inflate the totals.
+
   onTestEnd(test: TestCase, result: TestResult): void {
     const isFinalAttempt =
       result.status === test.expectedStatus ||

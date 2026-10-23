@@ -1,11 +1,6 @@
-// Report data model for "Laxmi's Report".
-// The custom reporter feeds results in with addResult(); the getters below
-// are what the HTML report reads from.
- 
 export const REPORT_TITLE = "Laxmi's Report";
- 
 export type TestStatus = 'passed' | 'failed' | 'skipped';
- 
+
 export interface TestRecord {
   title: string;
   project: string;

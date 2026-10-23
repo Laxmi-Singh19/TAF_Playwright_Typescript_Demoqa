@@ -13,6 +13,7 @@ does not depend on one tool.
 | API service | `services/` | One method for each API endpoint |
 | Core | `core/` | Base page, UI driver, validator, API client, logger, reporter, test fixtures |
 | Data | `testdata/`, `utils/` | JSON test data and the data reader |
+| Config | `config/` | Environment settings (`qa.json`) and the code that reads them |
 
 ## Tool independence (UI actions)
 - `core/UiDriver.ts` is the contract: it lists every UI action (open, click, type, upload, drag and drop...).
@@ -53,7 +54,7 @@ does not depend on one tool.
 - `custom-report/report.html`: our own HTML report (summary, filters, steps, errors, screenshots), built by `core/customHtmlReporter.ts`
 - Allure report: `npm run allure:generate`, then `npm run allure:open`
 - `allure-single-report/index.html`: Allure report in one single file, easy to send by email
-  (command: <paste the command you used here>)
+  (command: < `npx allure generate allure-results --single-file --clean -o allure-single-report`>)
 
 ## Remote execution
 Tests run on GitHub Actions (Chromium) on every push. Download the HTML report from the
@@ -69,7 +70,7 @@ Artifacts section of the run.
 | Logging and step-level reporting | Done |
 | Reports: Playwright HTML, custom HTML, Allure, single-file Allure | Done |
 | Local and remote execution (GitHub Actions) | Done |
-| Interface for assertions and the API client | Planned |
+| Interface for assertions and the API client | Done|
 | Configuration module, Excel reader | Planned |
 | Self-healing, mock, mobile | Planned |
 | Jenkins, Report Portal, Jira or Azure DevOps | Planned |

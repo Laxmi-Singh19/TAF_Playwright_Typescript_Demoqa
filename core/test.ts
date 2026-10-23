@@ -1,8 +1,9 @@
-import { test as base, Page } from '@playwright/test';
+import { test as base, Page, APIRequestContext } from '@playwright/test';
 import { Validator } from './Validator';
 import { PlaywrightValidator } from './PlaywrightValidator';
 import { Logger } from './Logger';
 import { ApiClient } from './ApiClient';
+import { PlaywrightApiClient } from './PlaywrightApiClient';
 import { UiDriver } from './UiDriver';
 import { PlaywrightDriver } from './PlaywrightDriver';
 import { BookStoreApi } from '../services/BookStoreApi';
@@ -38,6 +39,12 @@ function createDriver(page: Page): UiDriver {
 // To use another tool, return another Validator here. Flows and tests stay the same.
 function createValidator(page: Page): Validator {
   return new PlaywrightValidator(page);
+}
+
+// The only place where a tool-specific API client is chosen.
+// To use another tool, return another ApiClient here. Services and flows stay the same.
+function createApiClient(request: APIRequestContext): ApiClient {
+  return new PlaywrightApiClient(request);
 }
 
 // The test function and the business flows that tests can use.
@@ -100,7 +107,7 @@ export const test = base.extend<Fixtures>({
   },
 
   bookStoreApiFlow: async ({ page, request }, use) => {
-    await use(new BookStoreApiFlow(new BookStoreApi(new ApiClient(request)), createValidator(page)));
+    await use(new BookStoreApiFlow(new BookStoreApi(createApiClient(request)), createValidator(page)));
   },
 
   bookStoreUiFlow: async ({ page }, use) => {
