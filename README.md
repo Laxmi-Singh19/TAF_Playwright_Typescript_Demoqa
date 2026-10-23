@@ -50,7 +50,7 @@ does not depend on one tool.
 - `logs/execution.log`: every test, every step and every failure reason of the whole run
 - `logs/test-run.log`: framework logger with levels, test names and worker numbers
 - `playwright-report/`: Playwright HTML report (open it with `npm run report`)
-- `custom-report/index.html`: our own HTML report (summary, filters, steps, errors, screenshots), built by `core/HtmlReporter.ts`
+- `custom-report/report.html`: our own HTML report (summary, filters, steps, errors, screenshots), built by `core/customHtmlReporter.ts`
 - Allure report: `npm run allure:generate`, then `npm run allure:open`
 - `allure-single-report/index.html`: Allure report in one single file, easy to send by email
   (command: <paste the command you used here>)

@@ -1,14 +1,18 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { config } from '../config/Config';
+
 type Level = 'DEBUG' | 'INFO' | 'WARN' | 'ERROR';
 
 const order: Record<Level, number> = { DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3 };
 
+// Logging layer: every message goes to the console and to the log file from the configuration
 export class Logger {
-  private static logFile = path.join(process.cwd(), 'logs', 'test-run.log');
-  private static minLevel: Level = (process.env.LOG_LEVEL as Level) || 'INFO';
+  private static logFile = path.join(process.cwd(), config.logFile);
+  private static minLevel: Level = config.logLevel;
   private static testName = '';
 
+  // Called once for each test, so every line shows which test wrote it
   static setTest(name: string) {
     this.testName = name;
   }

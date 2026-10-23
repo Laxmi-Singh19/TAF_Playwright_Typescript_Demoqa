@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://demoqa.com",
+  "headless": true,
+  "retries": 1,
+  "workers": 2,
+  "testTimeout": 60000,
+  "expectTimeout": 10000,
+  "actionTimeout": 15000,
+  "navigationTimeout": 30000,
+  "logLevel": "INFO",
+  "logFile": "logs/test-run.log"
+}

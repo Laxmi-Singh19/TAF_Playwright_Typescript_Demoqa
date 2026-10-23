@@ -1,5 +1,6 @@
 import { test as base, Page } from '@playwright/test';
 import { Validator } from './Validator';
+import { PlaywrightValidator } from './PlaywrightValidator';
 import { Logger } from './Logger';
 import { ApiClient } from './ApiClient';
 import { UiDriver } from './UiDriver';
@@ -33,6 +34,12 @@ function createDriver(page: Page): UiDriver {
   return new PlaywrightDriver(page);
 }
 
+// The only place where a tool-specific validator is chosen.
+// To use another tool, return another Validator here. Flows and tests stay the same.
+function createValidator(page: Page): Validator {
+  return new PlaywrightValidator(page);
+}
+
 // The test function and the business flows that tests can use.
 // Tests import `test` from here, so they never import Playwright.
 type Fixtures = {
@@ -59,45 +66,45 @@ export const test = base.extend<Fixtures>({
 
   practiceFormFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new PracticeFormFlow(new PracticeFormPage(driver), new Validator(page)));
+    await use(new PracticeFormFlow(new PracticeFormPage(driver), createValidator(page)));
   },
 
   webTableFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new WebTableFlow(new WebTablesPage(driver), new Validator(page)));
+    await use(new WebTableFlow(new WebTablesPage(driver), createValidator(page)));
   },
 
   textBoxFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new TextBoxFlow(new TextBoxPage(driver), new Validator(page)));
+    await use(new TextBoxFlow(new TextBoxPage(driver), createValidator(page)));
   },
 
   alertsFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new AlertsFlow(new AlertsPage(driver), new Validator(page)));
+    await use(new AlertsFlow(new AlertsPage(driver), createValidator(page)));
   },
 
   framesWindowsFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new FramesWindowsFlow(new FramesPage(driver), new BrowserWindowsPage(driver), new Validator(page)));
+    await use(new FramesWindowsFlow(new FramesPage(driver), new BrowserWindowsPage(driver), createValidator(page)));
   },
 
   uploadDownloadFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new UploadDownloadFlow(new UploadDownloadPage(driver), new Validator(page)));
+    await use(new UploadDownloadFlow(new UploadDownloadPage(driver), createValidator(page)));
   },
 
   widgetsInteractionsFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new WidgetsInteractionsFlow(new WidgetsPage(driver), new InteractionsPage(driver), new Validator(page)));
+    await use(new WidgetsInteractionsFlow(new WidgetsPage(driver), new InteractionsPage(driver), createValidator(page)));
   },
 
   bookStoreApiFlow: async ({ page, request }, use) => {
-    await use(new BookStoreApiFlow(new BookStoreApi(new ApiClient(request)), new Validator(page)));
+    await use(new BookStoreApiFlow(new BookStoreApi(new ApiClient(request)), createValidator(page)));
   },
 
   bookStoreUiFlow: async ({ page }, use) => {
     const driver = createDriver(page);
-    await use(new BookStoreUiFlow(new LoginPage(driver), new BookStorePage(driver), new ProfilePage(driver), new Validator(page)));
+    await use(new BookStoreUiFlow(new LoginPage(driver), new BookStorePage(driver), new ProfilePage(driver), createValidator(page)));
   },
 });
